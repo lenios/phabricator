@@ -1,0 +1,12 @@
+==================================================
+todo list
+==================================================
+- allow ssl in webserver configuration
+- add nginx autoconfiguration option in post{inst,rm}
+- add bash completion configuration for arcanist
+- create a mysql user that only has access to phabricator databases (security)
+- allow to configure upload limit?
+- check if phabricator/externals/wordlist copyright is ok
+- symlink to the system fontawesome package, instead of shipping the fonts
+- fix bug: avoid the need to purge the package to be able to configure the webserver again (a simple remove will leave the webserver not configured)
+==================================================

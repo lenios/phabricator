@@ -1,0 +1,198 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Phabricator
+Source: github.com/facebook/
+
+Files: *
+Copyright: 2013 Facebook, Inc.
+License: Apache License v2
+
+Files: debian/*
+Copyright: 2013 Richard Sellam <richard.sellam@orvidia.fr>
+License: Apache License v2
+
+Files: phabricator/externals/amazon-ses/*
+Copyright: 2011, Dan Myers
+           Parts copyright (c) 2008, Donovan Schonknecht
+License: BSD-3-clause
+
+Files: phabricator/externals/balanced-php/*
+Copyright: 2012 Balanced
+License: Expat
+
+Files: phabricator/externals/diff_match_patch/*
+Copyright: 2006 Google Inc.
+License: Apache License v2
+
+Files: phabricator/externals/httpful/*
+Copyright: 2012 Nate Good <me@nategood.com>
+License: Expat
+
+Files: phabricator/externals/mimemailparser/*
+Copyright: gabe@fijiwebdesign.com
+License: Artistic
+
+Files: phabricator/externals/JsShrink/*
+Copyright: 2007 Jakub Vrana
+License: Apache License v2
+
+Files: phabricator/externals/phpmailer/*
+Copyright: 2004-2009, Andy Prevost. All Rights Reserved.
+           2001-2003, Brent R. Matzelle
+License: LGPL-2.1
+
+Files: phabricator/externals/phpqrcode/*
+Copyright: 2010, Dominik Dzienia
+License: LGPL-2.1
+
+Files: phabricator/externals/recaptcha/*
+Copyright: 2007 reCAPTCHA
+License: Expat
+
+Files: phabricator/externals/restful/*
+Copyright: 2012 Noone
+License: Expat
+
+Files: phabricator/externals/s3/*
+Copyright: 2013, Donovan Schönknecht
+License: BSD-2-clause
+
+Files: phabricator/externals/stripe-php/*
+Copyright: 2010 Stripe
+License: Expat
+
+Files: phabricator/externals/twilio-php/*
+Copyright: 2011, Twilio, Inc. <help at twilio dot com>
+           2011, Neuman Vong <neuman at twilio dot com>
+License: Expat
+
+Files: phabricator/externals/vegas/*
+Copyright: ALCARAZ Marc <ekameleon@gmail.com>
+License: LGPL-2.1
+
+Files: phabricator/externals/wepay/*
+Copyright: 2013 WePay, Inc. <api@wepay.com>
+License: Expat
+
+Files: phabricator/externals/wordlist/*
+Copyright: 2002,2003, Alexander Peslyak <solar at openwall.com>
+License:
+ You're allowed to use and redistribute this wordlists collection or parts thereof, with or without modification, provided that credit is given where it is due, any modified versions are marked as such, this license is kept intact and included with each copy, and NO FEE IS CHARGED FOR OBTAINING A COPY except as negotiated with the copyright holder. In particular, you are NOT permitted to charge for bandwidth, physical media, and/or shipping. You're also not permitted to bundle this wordlists collection with a product you charge for.
+ .
+ If redistribution for a fee is what you're after, please contact the copyright holder to negotiate special terms for the downloadable or the extended CD-ready version of this collection.
+ .
+ It was a significant amount of work to compile this collection and having a monopoly on regulating the CD sales is my way to compensate for the time already spent and to allow for further work.
+
+Files: phabricator/externals/xhprof/*
+Copyright: 2009 Facebook
+License: Apache License v2
+
+Files: phabricator/webroot/rsrc/externals/javelin/*
+Copyright: 2009, Evan Priestley and Facebook, inc.
+License: BSD-3-clause
+
+Files: phabricator/webroot/rsrc/externals/raphael/*
+Copyright: 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)
+           2008-2011 Sencha Labs (http://sencha.com)
+License: Expat
+
+License: Artistic
+ The full text of the Artistic Licence can be found in
+ "/usr/share/common-licenses/Artistic".
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included
+ in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: Apache License v2
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+     http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ The full text of the Apache Public Licence version 2 can also be found
+ in "/usr/share/common-licenses/Apache-2.0".
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without modification,
+ are permitted provided that the following conditions are met:
+ .
+ 1) Redistributions of source code must retain the above copyright notice,
+ this list of conditions and the following disclaimer.
+ .
+ 2) Redistributions in binary form must reproduce the above copyright notice,
+ this list of conditions and the following disclaimer in the documentation and/or
+ other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without modification,
+ are permitted provided that the following conditions are met:
+ .
+ 1) Redistributions of source code must retain the above copyright notice,
+ this list of conditions and the following disclaimer.
+ .
+ 2) Redistributions in binary form must reproduce the above copyright notice,
+ this list of conditions and the following disclaimer in the documentation and/or
+ other materials provided with the distribution.
+ .
+ 3) Neither the name of the ORGANIZATION nor the names of its contributors may be
+ used to endorse or promote products derived from this software without specific
+ prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: LGPL-2.1
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ Lesser General Public License for more details.
+ .
+ The full text of the GNU Lesser General Public License can also be
+ found in "/usr/share/common-licenses/LGPL-2.1".

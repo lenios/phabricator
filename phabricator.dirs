@@ -1,0 +1,4 @@
+etc/apache2/conf-available
+etc/lighttpd/conf-available
+var/lib/phabricator/phd_storage
+var/log/phabricator

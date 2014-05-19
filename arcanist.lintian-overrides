@@ -1,0 +1,3 @@
+#not a script, only a shebang
+arcanist: script-not-executable */__tests__/xhpast/php-tags-script.lint-test
+
