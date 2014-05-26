@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: phabricator\n"
+"Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
+"POT-Creation-Date: 2014-01-26 15:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:1001
+msgid "Domain name or subdomain name used by phabricator:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:1001
+msgid ""
+"Phabricator must be installed on an entire domain. You can not install it to "
+"a path on an existing domain, like example.com/phabricator/. Instead, "
+"install it to an entire domain or subdomain, like phabricator.example.com."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+msgid "Mysql user for phabricator:"
+msgstr ""
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:3001
+msgid "Mysql password for phabricator:"
+msgstr ""
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:4001
+msgid "password confirmation:"
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../phabricator.templates:5001
+msgid "Password input error"
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../phabricator.templates:5001
+msgid "The two passwords you entered were not the same. Please try again."
+msgstr ""
+
+#. Type: select
+#. Choices
+#: ../phabricator.templates:6001
+msgid "None"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:6002
+msgid "Web server:"
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:6002
+msgid ""
+"Please select the web server for which Phabricator should be automatically "
+"configured."
+msgstr ""
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:6002
+msgid "Select \"None\" if you would like to configure the web server manually."
+msgstr ""

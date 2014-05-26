@@ -1,0 +1,3 @@
+#include phpmailer but this is on purpose (see https://secure.phabricator.com/rP9ca2bb991c0a84c3630b3cb47b444a0dd23f6d2d and https://secure.phabricator.com/rPeeb97db283aa9dee120a5d3ffd93c2b044dc9336)
+phabricator: embedded-php-library */externals/phpmailer/class.phpmailer.php
+

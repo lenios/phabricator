@@ -1,0 +1,113 @@
+#!/bin/bash
+set -e
+
+mode="$1"
+version="$2"
+
+# Source debconf library.
+. /usr/share/debconf/confmodule
+
+db_get "phabricator/domain_name"
+domain_name="$RET"
+db_get "phabricator/phabricator_mysql_user"
+phabricator_mysql_user="$RET"
+db_get "phabricator/phabricator_mysql_pwd"
+phabricator_mysql_pwd="$RET"
+db_get "phabricator/webserver"
+WWWTYPE="$RET"
+
+ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.apache.conf /etc/apache2/conf-available/phabricator.conf
+ucfr phabricator /etc/apache2/conf-available/phabricator.conf
+ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.lighttpd.conf /etc/lighttpd/conf-available/20-phabricator.conf
+ucfr phabricator /etc/lighttpd/conf-available/20-phabricator.conf
+
+db_stop
+
+#unprivileged system user to run the phabricator daemons
+adduser --system --group --no-create-home --quiet phabricator || true
+
+local_disk_path="/var/lib/phabricator/phd_storage"
+pid_directory="/var/run/phabricator"
+repo_default_local_path="/var/lib/phabricator/repositories"
+log_directory="/var/log/phabricator"
+
+for dir in $pid_directory $repo_default_local_path $log_directory; do
+  if [ ! -d $dir ]; then
+    mkdir -p $dir
+  fi
+  chown phabricator:nogroup $dir
+done
+
+
+/usr/share/phabricator/bin/config set mysql.host localhost
+/usr/share/phabricator/bin/config set mysql.user $phabricator_mysql_user
+/usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
+/usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
+/usr/share/phabricator/bin/config set storage.mysql-engine.max-size 0
+/usr/share/phabricator/bin/config set storage.local-disk.path $local_disk_path
+
+#PHP doesn't provide the correct timezone, so we override the (default) date.timezone php setting
+#see http://us3.php.net/date_default_timezone_get
+/usr/share/phabricator/bin/config set phabricator.timezone $(cat /etc/timezone)
+
+/usr/share/phabricator/bin/config set phd.pid-directory $pid_directory
+#this is where phabricator daemon will set up repositories
+/usr/share/phabricator/bin/config set repository.default-local-path $repo_default_local_path
+/usr/share/phabricator/bin/config set phd.log-directory $log_directory 
+
+/usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
+
+#/usr/share/phabricator/bin/phd start
+#TODO? update-rc.d phabricator defaults
+
+# Update the webserver, if needed
+case $WWWTYPE in
+    apache2)
+	#TODO: check if this is really good to modify the file here
+	sed -i "s/  ServerName .*/  ServerName $domain_name/" /etc/apache2/conf-available/phabricator.conf
+#       Sniplet adjusted from http://wiki.debian.org/Apache/PackagingFor24
+	if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
+	    . /usr/share/apache2/apache2-maintscript-helper
+	    apache2_invoke enmod rewrite
+	    apache2_invoke enconf phabricator.conf
+	elif  dpkg-query -f '${Version}'  -W 'apache2.2-common' > /dev/null 2>&1 ; then
+	    a2enmod -q rewrite
+	    [ -d /etc/apache2/conf.d/ ] && [ ! -h /etc/apache2/conf.d/phabricator.conf ] && \
+		ln -s ../conf-available/phabricator.conf /etc/apache2/conf.d/phabricator.conf
+	else
+	    echo "Apache2 not installed, skipping"
+	fi
+	;;
+    lighttpd)
+	if [ -e /etc/lighttpd/conf-available/20-phabricator.conf ] ; then
+	    sed -i "s/\$HTTP\[\"host\"\] =.* {/\$HTTP[\"host\"] == \"$domain_name\" {/" /etc/lighttpd/conf-available/20-phabricator.conf
+	    if which lighty-enable-mod >/dev/null 2>&1 ; then
+		lighty-enable-mod phabricator
+	    else
+		echo "Lighttpd not installed, skipping"
+	    fi
+	fi
+	;;
+    *)
+	;;
+esac
+
+# Always trigger reload of webservers if the configuration is enabled
+if [ -e /etc/apache2/conf.d/phabricator.conf -o -e /etc/apache2/conf-enabled/phabricator.conf ] ; then
+    invoke-rc.d apache2 reload || true
+fi
+if [ -e /etc/lighttpd/conf-enabled/20-phabricator.conf ] ; then
+#   We need to take care: bug #446324
+    invoke-rc.d lighttpd reload 3>/dev/null || true
+fi
+
+#we need to have a readable/writable local disk storage!
+chown www-data:www-data $local_disk_path
+
+#DEBHELPER#
+
+echo "Installation finished. You can now access Phabricator at http://$domain_name/."
+
+exit 0
+
+
