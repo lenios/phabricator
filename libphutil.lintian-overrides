@@ -1,3 +1,0 @@
-#not a script, only a shebang
-libphutil: script-not-executable */__tests__/languageguesser/*
-
