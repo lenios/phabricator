@@ -4,7 +4,6 @@ todo list
 - the Adobe sourcesans pro font needs to be packaged in debian (see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=683774). Once this is done, it will need to be added to depends
 - allow ssl in webserver configuration
 - add nginx autoconfiguration option in post{inst,rm}
-- add bash completion configuration for arcanist
 - create a mysql user that only has access to phabricator databases (security)
 - allow to configure upload limit?
 - fix bug: avoid the need to purge the package to be able to configure the webserver again (a simple remove will leave the webserver not configured)
