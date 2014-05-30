@@ -27,13 +27,13 @@ Files: phabricator/externals/httpful/*
 Copyright: 2012 Nate Good <me@nategood.com>
 License: Expat
 
-Files: phabricator/externals/mimemailparser/*
-Copyright: gabe@fijiwebdesign.com
-License: Artistic
-
 Files: phabricator/externals/JsShrink/*
 Copyright: 2007 Jakub Vrana
 License: Apache License v2
+
+Files: phabricator/externals/mimemailparser/*
+Copyright: gabe@fijiwebdesign.com
+License: Artistic
 
 Files: phabricator/externals/phpmailer/*
 Copyright: 2004-2009, Andy Prevost. All Rights Reserved.
@@ -72,15 +72,6 @@ License: LGPL-2.1
 Files: phabricator/externals/wepay/*
 Copyright: 2013 WePay, Inc. <api@wepay.com>
 License: Expat
-
-Files: phabricator/externals/wordlist/*
-Copyright: 2002,2003, Alexander Peslyak <solar at openwall.com>
-License:
- You're allowed to use and redistribute this wordlists collection or parts thereof, with or without modification, provided that credit is given where it is due, any modified versions are marked as such, this license is kept intact and included with each copy, and NO FEE IS CHARGED FOR OBTAINING A COPY except as negotiated with the copyright holder. In particular, you are NOT permitted to charge for bandwidth, physical media, and/or shipping. You're also not permitted to bundle this wordlists collection with a product you charge for.
- .
- If redistribution for a fee is what you're after, please contact the copyright holder to negotiate special terms for the downloadable or the extended CD-ready version of this collection.
- .
- It was a significant amount of work to compile this collection and having a monopoly on regulating the CD sales is my way to compensate for the time already spent and to allow for further work.
 
 Files: phabricator/externals/xhprof/*
 Copyright: 2009 Facebook
