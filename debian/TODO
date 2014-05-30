@@ -1,7 +1,7 @@
 ==================================================
 todo list
 ==================================================
-- the Adobe sourcesans pro font needs to be packaged in debian (see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=683774). Once this is done, it will need to be added to depends
+- the Adobe sourcesans pro font needs to be packaged in debian (see https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=683774). Once this is done, it will need to be added to depends, so that Diviner (and probably other applications) do not render with a fallback font
 - allow ssl in webserver configuration
 - add nginx autoconfiguration option in post{inst,rm}
 - create a mysql user that only has access to phabricator databases (security)

@@ -1,2 +1,3 @@
-debian/phabricator.*.conf* usr/share/phabricator/conf_templates
 phabricator usr/share
+debian/phabricator.*.conf* usr/share/phabricator/conf_templates
+debian/password.lst usr/share/phabricator/externals/wordlist/

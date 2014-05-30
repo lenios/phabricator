@@ -3,4 +3,6 @@ phabricator for Debian
 * According to phabricator developers, everything in phabricator/externals is external code highly customized for phabricator. It cannot be packaged otherwise. For an example of what was modified and links for further details, see the lintian override for php mailer. 
 * __tests__ directories are packaged on purpose. Do not remove them if you don't want your phabricator instance to FATAL at runtime
 * if you are affected by bug 720434 (http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=720434), daemons won't be able to start properly. This is unfortunate but has nothing to do with phabricator. Get the correct php.ini (cp /usr/share/php5/php.ini-production.cli /etc/php5/cli/php.ini) and the daemons will work as expected.
+* Debian does not allow us to ship the most used passwords list compiled by openwall, so phabricator won't be able to tell you if your password is vulnerable to bruteforce. The openwall list is 3500+ passwords long, but only 634 are 8+ chars long (the minimum password length with phabricator default settings) and only one (winniethepooh) is 12+ chars long. So ensure your users use a long enough password and you won't miss this file. 
+
  -- Richard Sellam <richard.sellam@orvidia.fr>, Mon, 19 May 2014 21:19:30 +0100

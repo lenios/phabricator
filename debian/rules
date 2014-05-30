@@ -52,6 +52,7 @@ $(PKG)_$(VER)$(DTYPE).orig.tar.xz: $(info I: UDATE=$(UDATE))
 	&& $(RM) -r -v arcanist/bin/arc.bat \
 	&& $(RM) -r -v phabricator/webroot/rsrc/swf \
 	&& $(RM) -r -v phabricator/externals/twilio-php/docs \
+	&& $(RM) -r -v phabricator/externals/wordlist \
 	&& $(RM) -r -v phabricator/webroot/rsrc/externals/font/fontawesome/* \
 	&& $(RM) -r -v phabricator/webroot/rsrc/externals/font/sourcesans/* \
 	&& $(RM) -r arcanist/.git* libphutil/.git* phabricator/.git*
