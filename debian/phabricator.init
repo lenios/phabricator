@@ -1,12 +1,12 @@
 #! /bin/sh -e
 ### BEGIN INIT INFO
 # Provides:          phd
-# Required-Start:    $local_fs
-# Required-Stop:     $local_fs
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: phd
-# Description:       phabricator daemon
+# Description:       phabricator daemons
 ### END INIT INFO
 DAEMON="/usr/share/phabricator/bin/phd"
 #DAEMON_OPT=""
