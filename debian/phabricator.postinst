@@ -24,7 +24,7 @@ ucfr phabricator /etc/lighttpd/conf-available/20-phabricator.conf
 db_stop
 
 #unprivileged system user to run the phabricator daemons
-adduser --system --group --no-create-home --quiet phabricator || true
+adduser --system --group --home "/var/lib/phabricator" --quiet phabricator || true
 
 local_disk_path="/var/lib/phabricator/phd_storage"
 pid_directory="/var/run/phabricator"
