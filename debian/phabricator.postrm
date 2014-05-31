@@ -29,7 +29,6 @@ if which lighty-disable-mod >/dev/null 2>&1 ; then
 fi
 
 if [ "$1" = purge ]; then
-  update-rc.d phabricator remove >/dev/null
   rm -rf /usr/share/phabricator/conf/local
   rm -rf /var/run/phabricator
   rm -rf /var/log/phabricator

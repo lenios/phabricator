@@ -57,9 +57,6 @@ done
 
 /usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
 
-#/usr/share/phabricator/bin/phd start
-#TODO? update-rc.d phabricator defaults
-
 # Update the webserver, if needed
 case $WWWTYPE in
     apache2)
