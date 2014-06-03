@@ -1,3 +1,4 @@
 phabricator usr/share
 debian/phabricator.*.conf* usr/share/phabricator/conf_templates
-debian/password.lst usr/share/phabricator/externals/wordlist/
+debian/password.lst usr/share/phabricator/externals/wordlist
+debian/g.raphael/*.js usr/share/phabricator/webroot/rsrc/externals/raphael

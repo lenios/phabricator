@@ -55,6 +55,7 @@ $(PKG)_$(VER)$(DTYPE).orig.tar.xz: $(info I: UDATE=$(UDATE))
 	&& $(RM) -r -v phabricator/externals/wordlist \
 	&& $(RM) -r -v phabricator/webroot/rsrc/externals/font/fontawesome/* \
 	&& $(RM) -r -v phabricator/webroot/rsrc/externals/font/sourcesans/* \
+	&& $(RM) -r -v phabricator/webroot/rsrc/externals/raphael/* \
 	&& $(RM) -r arcanist/.git* libphutil/.git* phabricator/.git*
 	@echo "# Packing..."
 	find -L "$(PKG)-$(VER)" -xdev -type f -print | sort \

@@ -10,6 +10,10 @@ Files: debian/*
 Copyright: 2013 Richard Sellam <richard.sellam@orvidia.fr>
 License: Apache License v2
 
+Files: debian/g.raphael/*
+Copyright: 2009-2012 Dmitry Baranovskiy (http://g.raphaeljs.com)
+License: Expat
+
 Files: phabricator/externals/amazon-ses/*
 Copyright: 2011, Dan Myers
            Parts copyright (c) 2008, Donovan Schonknecht
@@ -80,11 +84,6 @@ License: Apache License v2
 Files: phabricator/webroot/rsrc/externals/javelin/*
 Copyright: 2009, Evan Priestley and Facebook, inc.
 License: BSD-3-clause
-
-Files: phabricator/webroot/rsrc/externals/raphael/*
-Copyright: 2008-2011 Dmitry Baranovskiy (http://raphaeljs.com)
-           2008-2011 Sencha Labs (http://sencha.com)
-License: Expat
 
 License: Artistic
  The full text of the Artistic Licence can be found in
