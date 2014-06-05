@@ -23,9 +23,9 @@ override_dh_clean:
 get-orig-source: $(PKG)_$(VER)$(DTYPE).orig.tar.xz $(info I: $(PKG)_$(VER)$(DTYPE))
 	@
 
-ARCANIST = git://github.com/facebook/arcanist.git
-LIBPHUTIL = git://github.com/facebook/libphutil.git
-PHABRICATOR = git://github.com/facebook/phabricator.git
+ARCANIST = git://github.com/phacility/arcanist.git
+LIBPHUTIL = git://github.com/phacility/libphutil.git
+PHABRICATOR = git://github.com/phacility/phabricator.git
 UDATE = $(shell date --rfc-3339=seconds --date='TZ="UTC" $(shell echo $(VER) | perl -ne 'print "$$1-$$2-$$3" if m/\+(?:git|svn|hg)(\d{4})(\d{2})(\d{2})/')')
 $(PKG)_$(VER)$(DTYPE).orig.tar.xz: $(info I: UDATE=$(UDATE))
 	$(if $(wildcard $(PKG)-$(VER)),$(error $(PKG)-$(VER) exist, aborting..))
