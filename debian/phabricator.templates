@@ -8,14 +8,15 @@ _Description: Domain name or subdomain name used by phabricator:
 Template: phabricator/phabricator_mysql_user
 Type: string
 _Description: Mysql user for phabricator:
+ This user must have enough privileges to create databases.
 
 Template: phabricator/phabricator_mysql_pwd
 Type: password
-_Description: Mysql password for phabricator:
+_Description: Mysql password for phabricator user:
 
 Template: phabricator/pwd_check
 Type: password
-_Description: password confirmation:
+_Description: Mysql password confirmation:
 
 Template: phabricator/password_mismatch
 Type: error
@@ -25,7 +26,7 @@ _Description: Password input error
 Template: phabricator/webserver
 Type: select
 #flag:translate:3
-__Choices: apache2, lighttpd, None
+__Choices: apache2, nginx, lighttpd, None
 Default: apache2
 _Description: Web server:
  Please select the web server for which Phabricator should be automatically

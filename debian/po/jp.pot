@@ -40,17 +40,23 @@ msgstr "インストールが完了するため、この（サブ）ドメイン
 #. Type: string
 #. Description
 #: ../templates:2001
-msgid "Mysql user used by phabricator:"
+msgid "Mysql user for phabricator:"
 msgstr "phabricatorのmysqlユーザ名:"
+
+#. Type: string
+#. Description
+#: ../templates:2001
+msgid "This user must have enough privileges to create databases."
+msgstr "データベースの作成権限が必要です。"
 
 #. Type: password
 #. Description
 #: ../templates:3001
-msgid "Mysql password for phabricator:"
+msgid "Mysql password for phabricator user:"
 msgstr "phabricatorのmysqlパスワード:"
 
 #. Type: password
 #. Description
 #: ../templates:4001
-msgid "password confirmation:"
-msgstr "パスワードの確認:"
+msgid "Mysql password confirmation:"
+msgstr "Mysqlパスワードの確認:"

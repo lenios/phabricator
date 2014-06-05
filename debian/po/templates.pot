@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phabricator\n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
-"POT-Creation-Date: 2014-01-26 15:52+0100\n"
+"POT-Creation-Date: 2014-06-05 20:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,16 +38,22 @@ msgstr ""
 msgid "Mysql user for phabricator:"
 msgstr ""
 
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+msgid "This user must have enough privileges to create databases."
+msgstr ""
+
 #. Type: password
 #. Description
 #: ../phabricator.templates:3001
-msgid "Mysql password for phabricator:"
+msgid "Mysql password for phabricator user:"
 msgstr ""
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
-msgid "password confirmation:"
+msgid "Mysql password confirmation:"
 msgstr ""
 
 #. Type: error
@@ -65,7 +71,7 @@ msgstr ""
 #. Type: select
 #. Choices
 #: ../phabricator.templates:6001
-msgid "None"
+msgid "lighttpd"
 msgstr ""
 
 #. Type: select

@@ -3,9 +3,7 @@ set -e
 
 #DEBHELPER#
 
-/usr/share/phabricator/bin/phd stop
-
-#sed -i "s/  ServerName .*/  ServerName phabricator.example.com/" /etc/phabricator/phabricator.conf
+/usr/share/phabricator/bin/phd stop || true
 
 exit 0
 

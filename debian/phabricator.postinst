@@ -20,6 +20,8 @@ ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.apache.conf /
 ucfr phabricator /etc/apache2/conf-available/phabricator.conf
 ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.lighttpd.conf /etc/lighttpd/conf-available/20-phabricator.conf
 ucfr phabricator /etc/lighttpd/conf-available/20-phabricator.conf
+ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.nginx.conf /etc/nginx/sites-available/phabricator.conf
+ucfr phabricator /etc/nginx/sites-available/phabricator.conf
 
 db_stop
 
@@ -85,6 +87,12 @@ case $WWWTYPE in
 	    fi
 	fi
 	;;
+    nginx)
+	if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
+            sed -i "s/  server_name .*/  server_name $domain_name;/" /etc/nginx/sites-available/phabricator.conf
+	    ln -s /etc/nginx/sites-available/phabricator.conf /etc/nginx/sites-enabled/phabricator.conf
+	fi
+	;;
     *)
 	;;
 esac
@@ -97,13 +105,16 @@ if [ -e /etc/lighttpd/conf-enabled/20-phabricator.conf ] ; then
 #   We need to take care: bug #446324
     invoke-rc.d lighttpd reload 3>/dev/null || true
 fi
+if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
+    invoke-rc.d nginx reload || true
+fi
 
 #we need to have a readable/writable local disk storage!
 chown www-data:www-data $local_disk_path
 
 #DEBHELPER#
 
-echo "Installation finished. You can now access Phabricator at http://$domain_name/."
+echo "Installation complete. You can now access Phabricator at http://$domain_name/."
 
 exit 0
 

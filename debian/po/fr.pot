@@ -40,17 +40,23 @@ msgstr "Ce (sous-)domaine doit être resolvable pour que l'installation se termi
 #. Type: string
 #. Description
 #: ../templates:2001
-msgid "Mysql user used by phabricator:"
+msgid "Mysql user for phabricator:"
 msgstr "utilisateur mysql pour phabricator :"
+
+#. Type: string
+#. Description
+#: ../templates:2001
+msgid "This user must have enough privileges to create databases."
+msgstr "Cet utilisateur doit posséder assez de droits pour créer des bases de données."
 
 #. Type: password
 #. Description
 #: ../templates:3001
-msgid "Mysql password for phabricator:"
+msgid "Mysql password for phabricator user:"
 msgstr "Mot de passe mysql pour phabricator :"
 
 #. Type: password
 #. Description
 #: ../templates:4001
-msgid "password confirmation:"
-msgstr "Confirmation du mot de passe :"
+msgid "Mysql password confirmation:"
+msgstr "Confirmation du mot de passe mysql:"

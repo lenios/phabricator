@@ -27,6 +27,11 @@ if which lighty-disable-mod >/dev/null 2>&1 ; then
 #   We need to take care: bug #446324
     invoke-rc.d lighttpd reload 3>/dev/null || true
 fi
+#nginx
+if [ -e /etc/nginx/sites-enabled/phabricator.conf ]; then
+    rm -f /etc/nginx/sites-enabled/phabricator.conf
+    invoke-rc.d nginx reload || true
+fi
 
 if [ "$1" = purge ]; then
   rm -rf /usr/share/phabricator/conf/local
@@ -41,7 +46,8 @@ if [ "$1" = purge ]; then
   # get rid of configuration files and ucf entries
   for config_file in \
     /etc/apache2/conf-available/phabricator.conf \
-    /etc/lighttpd/conf-available/20-phabricator.conf
+    /etc/lighttpd/conf-available/20-phabricator.conf \
+    /etc/nginx/sites-available/phabricator.conf
   do
     if which ucf >/dev/null 2>&1; then
       ucf --purge $config_file
