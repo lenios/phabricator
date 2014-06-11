@@ -5,6 +5,8 @@ Maintainer: Richard Sellam <richard.sellam@orvidia.fr>
 Build-Depends: debhelper (>= 9), git, po-debconf
 Standards-Version: 3.9.5
 Homepage: http://phabricator.org/
+Vcs-Browser: https://github.com/lenios/phabricator
+Vcs-Git: git://github.com/lenios/phabricator.git
 
 Package: libphutil
 Architecture: all
