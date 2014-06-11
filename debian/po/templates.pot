@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phabricator\n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
-"POT-Creation-Date: 2014-06-05 20:43+0200\n"
+"POT-Creation-Date: 2014-06-11 09:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,25 +35,48 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
-msgid "Mysql user for phabricator:"
+msgid "Mysql administrator username:"
 msgstr ""
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
-msgid "This user must have enough privileges to create databases."
+msgid ""
+"Please enter the username of a Mysql server administrator. This account must "
+"have enough privileges to create phabricator_* databases."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+msgid "You can create such a user with the following mysql command:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+#, no-c-format
+msgid ""
+"grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
+"identified by 'PASSWORD';"
 msgstr ""
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:3001
-msgid "Mysql password for phabricator user:"
+msgid "Mysql administrator password:"
 msgstr ""
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
-msgid "Mysql password confirmation:"
+msgid "Mysql administrator password confirmation:"
+msgstr ""
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:4001
+msgid "Please enter your Mysql administrator password again for confirmation."
 msgstr ""
 
 #. Type: error
