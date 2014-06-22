@@ -11,7 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2014-06-22 16:37+0200\n"
 "Last-Translator: Richard SELLAM <richard.sellam@orvidia.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: fr\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. Description
 #: ../phabricator.templates:1001
 msgid "Domain name or subdomain name used by phabricator:"
-msgstr "Nom du domaine ou du sous-domaine utilisé par phabricator:"
+msgstr "phabricatorが使用するドメイン名、またはサブドメイン名:"
 
 #. Type: string
 #. Description
@@ -29,13 +29,13 @@ msgid ""
 "Phabricator must be installed on an entire domain. You can not install it to "
 "a path on an existing domain, like example.com/phabricator/. Instead, "
 "install it to an entire domain or subdomain, like phabricator.example.com."
-msgstr "Phabricator doit être installé sur son propre domaine. Vous ne pouvez pas l'installer dans un sous-répertoire d'un domaine existant tel que exemple.com/phabricator/. Vous devez au contraire l'installer sur un domaine ou un sous-domaine entier, comme par exemple phabricator.exemple.com."
+msgstr "Phabricatorは、ドメイン全体を使用してインストールする必要があります。example.com/phabricator/とかのあるドメインパスにインストールすることができません。その代わりに、ドメイン全体、またはphabricator.example.comとかのサブドメイン全体を使用してインストールして下さい。"
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
 msgid "Mysql administrator username:"
-msgstr "Nom d'utilisateur d'un administrateur mysql:"
+msgstr "MySQLの管理者アカウントのユーザー名:"
 
 #. Type: string
 #. Description
@@ -43,13 +43,13 @@ msgstr "Nom d'utilisateur d'un administrateur mysql:"
 msgid ""
 "Please enter the username of a Mysql server administrator. This account must "
 "have enough privileges to create phabricator_* databases."
-msgstr "Veuillez entrer le nom d'utilisateur d'un administrateur Mysql. Cet utilisateur doit posséder assez de droits pour créer des bases de données phabricator_*."
+msgstr "MySQL管理者アカウントのユーザー名を入力して下さい。そのアカウントはphabricator_*データベースの作成権限が必要です。"
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
 msgid "You can create such a user with the following mysql command:"
-msgstr "Vous pouvez créer un tel utilisateur avec la commande mysql suivante:"
+msgstr "次のMySQLコマンドでそのようなユーザーを作成することができます:"
 
 #. Type: string
 #. Description
@@ -58,49 +58,49 @@ msgstr "Vous pouvez créer un tel utilisateur avec la commande mysql suivante:"
 msgid ""
 "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
 "identified by 'PASSWORD';"
-msgstr "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost identified by 'MOTDEPASSE';"
+msgstr "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost identified by '「パースワード」';"
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:3001
 msgid "Mysql administrator password:"
-msgstr "Mot de passe de l'administrateur Mysql :"
+msgstr "Mysqlの管理者アカウントのパスワード:"
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
 msgid "Mysql administrator password confirmation:"
-msgstr "Mot de passe de l'administrateur Mysql (confirmation):"
+msgstr "Mysqlの管理者アカウントのパスワード(再入力):"
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
 msgid "Please enter your Mysql administrator password again for confirmation."
-msgstr "Veuillez retaper le mot de passe de l'administrateur Mysql pour le confirmer."
+msgstr "確認のため、管理者アカウントのパスワードを再度入力してください。"
 
 #. Type: error
 #. Description
 #: ../phabricator.templates:5001
 msgid "Password input error"
-msgstr "Erreur de mot de passe"
+msgstr "パスワード入力エラー"
 
 #. Type: error
 #. Description
 #: ../phabricator.templates:5001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr "Les deux mots de passe que vous avez entrés ne sont pas identiques. Merci de réessayer."
+msgstr "入力した2つのパスワードが同じではありませんでした。もう一度やり直してください。"
 
 #. Type: select
 #. Choices
 #: ../phabricator.templates:6001
 msgid "None"
-msgstr "Aucun"
+msgstr "なし"
 
 #. Type: select
 #. Description
 #: ../phabricator.templates:6002
 msgid "Web server:"
-msgstr "Serveur web:"
+msgstr "Webサーバー："
 
 #. Type: select
 #. Description
@@ -108,10 +108,10 @@ msgstr "Serveur web:"
 msgid ""
 "Please select the web server for which Phabricator should be automatically "
 "configured."
-msgstr "Veuillez choisir le serveur web avec lequel Phabricator doit être automatiquement configuré."
+msgstr "Phabricatorを自動的に設定するWebサーバーを選択してください。"
 
 #. Type: select
 #. Description
 #: ../phabricator.templates:6002
 msgid "Select \"None\" if you would like to configure the web server manually."
-msgstr "Choisissez \"Aucun\" si vous souhaitez configurer le serveur web manuellement."
+msgstr "手動でWebサーバーを設定したい場合は、\"なし\"を選択してください。"

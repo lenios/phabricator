@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phabricator\n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
-"POT-Creation-Date: 2014-06-11 09:42+0200\n"
+"POT-Creation-Date: 2014-06-22 16:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,7 +94,7 @@ msgstr ""
 #. Type: select
 #. Choices
 #: ../phabricator.templates:6001
-msgid "lighttpd"
+msgid "None"
 msgstr ""
 
 #. Type: select

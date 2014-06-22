@@ -30,7 +30,7 @@ _Description: Password input error
 
 Template: phabricator/webserver
 Type: select
-#flag:translate:3
+#flag:translate:4
 __Choices: apache2, nginx, lighttpd, None
 Default: apache2
 _Description: Web server:
