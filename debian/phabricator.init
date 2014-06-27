@@ -21,33 +21,33 @@ test -x $DAEMON || exit 0
 
 d_start () {
         log_daemon_msg "Starting system $DAEMON_NAME Daemon"
-	start-stop-daemon --start --quiet --chuid $DAEMONUSER --exec $DAEMON -- start
+	    start-stop-daemon --start --quiet --chuid $DAEMONUSER --exec $DAEMON -- start
         log_end_msg $?
 }
 
 d_stop () {
         log_daemon_msg "Stopping system $DAEMON_NAME Daemon"
         start-stop-daemon --start --quiet --chuid $DAEMONUSER --exec $DAEMON -- stop
-	log_end_msg $?
+	    log_end_msg $?
 }
 
 case "$1" in
 
-        start|stop)
-                d_${1}
-                ;;
+    start|stop)
+        d_${1}
+        ;;
 
-        restart|reload|force-reload)
-                        d_stop
-                        d_start
-                ;;
+    restart|reload|force-reload)
+        d_stop
+        d_start
+        ;;
 
-        status)
-                $DAEMON status  && exit 0 || exit $?
-                ;;
-        *)
-                echo "Usage: /etc/init.d/$DAEMON_NAME {start|stop|restart|reload|force-reload|status}"
-                exit 1
-                ;;
+    status)
+        $DAEMON status  && exit 0 || exit $?
+        ;;
+    *)
+        echo "Usage: /etc/init.d/$DAEMON_NAME {start|stop|restart|reload|force-reload|status}"
+        exit 1
+        ;;
 esac
 exit 0
