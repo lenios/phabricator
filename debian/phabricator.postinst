@@ -62,8 +62,6 @@ done
 # Update the webserver, if needed
 case $WWWTYPE in
     apache2)
-	#TODO: check if this is really good to modify the file here
-	sed -i "s/  ServerName .*/  ServerName $domain_name/" /etc/apache2/conf-available/phabricator.conf
 #       Sniplet adjusted from http://wiki.debian.org/Apache/PackagingFor24
 	if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
 	    . /usr/share/apache2/apache2-maintscript-helper
@@ -79,7 +77,6 @@ case $WWWTYPE in
 	;;
     lighttpd)
 	if [ -e /etc/lighttpd/conf-available/20-phabricator.conf ] ; then
-	    sed -i "s/\$HTTP\[\"host\"\] =.* {/\$HTTP[\"host\"] == \"$domain_name\" {/" /etc/lighttpd/conf-available/20-phabricator.conf
 	    if which lighty-enable-mod >/dev/null 2>&1 ; then
 		lighty-enable-mod phabricator
 	    else
@@ -89,7 +86,6 @@ case $WWWTYPE in
 	;;
     nginx)
 	if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
-            sed -i "s/  server_name .*/  server_name $domain_name;/" /etc/nginx/sites-available/phabricator.conf
 	    ln -s /etc/nginx/sites-available/phabricator.conf /etc/nginx/sites-enabled/phabricator.conf
 	fi
 	;;
