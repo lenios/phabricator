@@ -2,7 +2,8 @@ Source: phabricator
 Section: web
 Priority: optional
 Maintainer: Richard Sellam <richard.sellam@orvidia.fr>
-Build-Depends: debhelper (>= 9), git, po-debconf
+Uploaders: Sylvestre Ledru <sylvestre@debian.org>
+Build-Depends: debhelper (>= 9), po-debconf
 Standards-Version: 3.9.5
 Homepage: http://phabricator.org/
 Vcs-Browser: https://github.com/lenios/phabricator
@@ -12,23 +13,22 @@ Package: libphutil
 Architecture: all
 Depends: ${misc:Depends}
 Recommends: php5-cli
-Description: shared library for Arcanist and Phabricator
+Description: Shared library for Arcanist and Phabricator
  libphutil (pronounced as "lib-futile", like the English word futile)
- is principally the shared library for Arcanist and Phabricator
- (see http://www.phabricator.org/), but is suitable for inclusion in other
- projects. In particular, some of the classes provided in this library vastly
- improve the state of common operations in PHP, like executing system commands.
+ is principally the shared library for Arcanist and Phabricator,
+ but is suitable for inclusion in other projects.
+ In particular, some of the classes provided in this library improve the state
+ of common operations in PHP, like executing system commands.
+
 
 Package: arcanist
 Architecture: all
 Depends: libphutil, php5-cli, php5-curl, ${misc:Depends}
 Suggests: python
-Description: command line interface for Phabricator (review platform)
+Description: Command line interface for Phabricator (review platform)
  Arcanist is the command-line tool for Phabricator. It allows you to interact
  with Phabricator installs to send code for review, download patches, transfer
- files, view status, make API calls, and various other things. You can find
- a complete user guide here:
- http://www.phabricator.com/docs/phabricator/article/Arcanist_User_Guide.html
+ files, view status, make API calls, and various other things.
 
 Package: phabricator
 Architecture: all
@@ -47,10 +47,9 @@ Depends: arcanist,
          ${misc:Depends}
 Recommends: apache2 (>= 2.2.7) | lighttpd | nginx | httpd, php5-apcu, php5-gd
 Suggests: flashplugin-nonfree, python
-Description: suite of web applications that help communicate about software
+Description: Software engineering platform
  Phabricator is an open source collection of web applications which make it
- easier to write, review, and share source code. Phabricator was developed at
- Facebook.
+ easier to write, review, and share source code.
  .
  Features:
   * Review Code: Review others' code with Differential

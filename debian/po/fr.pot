@@ -76,7 +76,7 @@ msgstr "Mot de passe de l'administrateur Mysql (confirmation):"
 #. Description
 #: ../phabricator.templates:4001
 msgid "Please enter your Mysql administrator password again for confirmation."
-msgstr "Veuillez retaper le mot de passe de l'administrateur Mysql pour le confirmer."
+msgstr "Veuillez resaisir le mot de passe de l'administrateur Mysql pour le confirmer."
 
 #. Type: error
 #. Description
@@ -88,7 +88,7 @@ msgstr "Erreur de mot de passe"
 #. Description
 #: ../phabricator.templates:5001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr "Les deux mots de passe que vous avez entrés ne sont pas identiques. Merci de réessayer."
+msgstr "Les deux mots de passe que vous avez saisis ne sont pas identiques. Merci de réessayer."
 
 #. Type: select
 #. Choices
