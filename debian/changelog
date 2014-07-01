@@ -1,5 +1,5 @@
-phabricator (0~git20140622-1) unstable; urgency=medium
+phabricator (0~git20140701-1) unstable; urgency=medium
 
   * Initial release (closes: #703046)
 
- -- Richard Sellam <richard.sellam@orvidia.fr>  Sun, 22 Jun 2014 14:14:26 +0200
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 01 Jul 2014 18:26:09 +0200

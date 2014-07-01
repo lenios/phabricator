@@ -33,7 +33,7 @@ get-orig-source: $(info I: UDATE=$(UDATE))
 		cd $$P && git checkout $$(git log -n1 --format=%h --before="$(UDATE)") && cd -; \
 	done
 	echo "# Copying git revision number..."
-	cd phabricator-$(VER); echo "based on git revision $$(git log -n1 --format=%H)." > conf/local/VERSION; cd ..
+	cd phabricator-$(VER); echo "based on git revision $$(git log -n1 --format=%H)." > phabricator/conf/local/VERSION; cd ..
 	echo "# Cleaning-up..."
 	$(RM) -r -v libphutil-$(VER)/src/parser/xhpast/bin/xhpast.exe
 	$(RM) -r -v arcanist-$(VER)/bin/arc.bat
