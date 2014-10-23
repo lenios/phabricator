@@ -87,6 +87,37 @@ Files: phabricator/externals/xhprof/*
 Copyright: 2009 Facebook
 License: Apache License v2
 
+Files: phabricator/webroot/rsrc/image/icon/fatcow/*
+Copyright: 2014-2009 FatCow Web Hosting
+Comment:
+ These icons come from the FatCow icon set: http://www.fatcow.com/free-icons
+ .
+ They are available under the Creative Commons Attribution 3.0 License:
+ .
+ http://creativecommons.org/licenses/by/3.0/us/
+ .
+ Some icons have been adapted from the FatCow set for use in Phabricator:
+ .
+ key_question.png      (from key_*.png)
+ source/web.png        (from world.png)
+ source/email.png      (from email.png)
+ source/conduit.png    (from satellite_dish.png)
+ source/mobile.png     (from phone.png)
+ source/tablet.png     (from tablet.png)	
+ source/fax.png        (from fax.png)
+License: CC-BY-3.0
+
+Files: phabricator/webroot/rsrc/image/icon/tango/*
+Comment:
+ These icons come from the Tango Desktop Project:
+ .
+ http://tango.freedesktop.org/
+ .
+ They are available in the public domain:
+ _.
+ http://tango.freedesktop.org/Frequently_Asked_Questions
+License: public-domain
+
 Files: phabricator/webroot/rsrc/externals/javelin/*
 Copyright: 2009, Evan Priestley and Facebook, inc.
 License: BSD-3-clause
@@ -254,3 +285,10 @@ License: MPL-1.1
  and other provisions required by the LGPL or the GPL. If you do not delete
  the provisions above, a recipient may use your version of this file under
  the terms of any one of the MPL, the GPL or the LGPL.
+
+License: CC-BY-3.0
+ This work is licenced under the Creative Commons Attribution 3.0 Unported
+ License. To view a copy of this licence, visit
+ http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative
+ Commons, 171 Second Street, Suite 300, San Francisco, California 94105, USA.
+
