@@ -4,11 +4,11 @@ Source: github.com/facebook/
 
 Files: *
 Copyright: 2013 Facebook, Inc.
-License: Apache License v2
+License: Apache-2.0
 
 Files: debian/*
 Copyright: 2013 Richard Sellam <richard.sellam@orvidia.fr>
-License: Apache License v2
+License: Apache-2.0
 
 Files: debian/g.raphael/*
 Copyright: 2009-2012 Dmitry Baranovskiy (http://g.raphaeljs.com)
@@ -25,7 +25,7 @@ License: Expat
 
 Files: phabricator/externals/diff_match_patch/*
 Copyright: 2006 Google Inc.
-License: Apache License v2
+License: Apache-2.0
 
 Files: phabricator/externals/httpful/*
 Copyright: 2012 Nate Good <me@nategood.com>
@@ -33,7 +33,7 @@ License: Expat
 
 Files: phabricator/externals/JsShrink/*
 Copyright: 2007 Jakub Vrana
-License: Apache License v2 and GPL-2+
+License: Apache-2.0 and GPL-2+
 
 Files: phabricator/externals/mimemailparser/*
 Copyright: gabe@fijiwebdesign.com
@@ -73,7 +73,7 @@ License: Expat
 
 Files: phabricator/externals/twilio-php/package.php
 Copyright: 2014, Twilio, Inc. <help at twilio dot com>
-License: Apache License v2
+License: Apache-2.0
 
 Files: phabricator/externals/vegas/*
 Copyright: ALCARAZ Marc <ekameleon@gmail.com>
@@ -85,7 +85,7 @@ License: Expat
 
 Files: phabricator/externals/xhprof/*
 Copyright: 2009 Facebook
-License: Apache License v2
+License: Apache-2.0
 
 Files: phabricator/webroot/rsrc/image/icon/fatcow/*
 Copyright: 2014-2009 FatCow Web Hosting
@@ -146,7 +146,7 @@ License: Expat
  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-License: Apache License v2
+License: Apache-2.0
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -223,10 +223,6 @@ License: LGPL-2.1
  .
  The full text of the GNU Lesser General Public License can also be
  found in "/usr/share/common-licenses/LGPL-2.1".
-
-License: LGPL-3.0
- On Debian systems the full text of the GNU Lesser General Public License can 
- be found in the '/usr/share/common-licenses/LGPL-3.0' file.
 
 License: LGPL-3+
  On Debian systems the full text of the GNU Lesser General Public License can
