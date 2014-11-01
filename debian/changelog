@@ -1,5 +1,20 @@
+phabricator (0~git20141101-1) unstable; urgency=medium
+
+  * New upstream version
+  * renamed translation po files so that they are used (closes: #767636)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Sat, 01 Nov 2014 23:20:06 +0100
+
+phabricator (0~git20141023-2) unstable; urgency=medium
+
+  * arc & arcanist are conflicting. Make them conflict for real
+    (Closes: #766955)
+
+ -- Sylvestre Ledru <sylvestre@debian.org>  Tue, 28 Oct 2014 13:53:09 +0100
+
 phabricator (0~git20141023-1) unstable; urgency=medium
 
   * Initial release (closes: #703046)
 
  -- Richard Sellam <richard.sellam@orvidia.fr>  Thu, 23 Oct 2014 20:49:26 +0200
+
