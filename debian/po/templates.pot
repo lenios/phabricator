@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: phabricator\n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
-"POT-Creation-Date: 2014-06-22 16:37+0200\n"
+"POT-Creation-Date: 2014-11-06 21:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,21 +34,21 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
-msgid "Mysql administrator username:"
+msgid "MySQL administrator account username:"
 msgstr ""
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
 msgid ""
-"Please enter the username of a Mysql server administrator. This account must "
-"have enough privileges to create phabricator_* databases."
+"Please enter the username of a MySQL account that has enough privileges to "
+"create and use phabricator_* databases."
 msgstr ""
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
-msgid "You can create such a user with the following mysql command:"
+msgid "You can create such a user with the following MySQL command:"
 msgstr ""
 
 #. Type: string
@@ -64,19 +63,20 @@ msgstr ""
 #. Type: password
 #. Description
 #: ../phabricator.templates:3001
-msgid "Mysql administrator password:"
+msgid "MySQL administrator account password:"
 msgstr ""
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
-msgid "Mysql administrator password confirmation:"
+msgid "MySQL administrator account password confirmation:"
 msgstr ""
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
-msgid "Please enter your Mysql administrator password again for confirmation."
+msgid ""
+"Please enter the MySQL administrator account password again for confirmation."
 msgstr ""
 
 #. Type: error
@@ -107,8 +107,7 @@ msgstr ""
 #. Description
 #: ../phabricator.templates:6002
 msgid ""
-"Please select the web server for which Phabricator should be automatically "
-"configured."
+"Please select the web server to configure automatically for Phabricator."
 msgstr ""
 
 #. Type: select

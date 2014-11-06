@@ -1,3 +1,10 @@
+phabricator (0~git20141106-1) unstable; urgency=medium
+
+  * New upstream version
+  * fixed po-debconf messages inconsistencies (closes: #768201)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Thu, 06 Nov 2014 20:49:08 +0100
+
 phabricator (0~git20141101-1) unstable; urgency=medium
 
   * New upstream version

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phabricator\n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
-"POT-Creation-Date: 2014-06-22 16:37+0200\n"
+"POT-Creation-Date: 2014-11-06 21:51+0100\n"
 "PO-Revision-Date: 2014-06-22 16:37+0200\n"
 "Last-Translator: Richard SELLAM <richard.sellam@orvidia.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,26 +29,32 @@ msgid ""
 "Phabricator must be installed on an entire domain. You can not install it to "
 "a path on an existing domain, like example.com/phabricator/. Instead, "
 "install it to an entire domain or subdomain, like phabricator.example.com."
-msgstr "Phabricatorは、ドメイン全体を使用してインストールする必要があります。example.com/phabricator/とかのあるドメインパスにインストールすることができません。その代わりに、ドメイン全体、またはphabricator.example.comとかのサブドメイン全体を使用してインストールして下さい。"
+msgstr ""
+"Phabricatorは、ドメイン全体を使用してインストールする必要があります。example."
+"com/phabricator/とかのあるドメインパスにインストールすることができません。そ"
+"の代わりに、ドメイン全体、またはphabricator.example.comとかのサブドメイン全体"
+"を使用してインストールして下さい。"
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
-msgid "Mysql administrator username:"
-msgstr "MySQLの管理者アカウントのユーザー名:"
+msgid "MySQL administrator account username:"
+msgstr "MySQL管理者アカウントのユーザー名:"
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
 msgid ""
-"Please enter the username of a Mysql server administrator. This account must "
-"have enough privileges to create phabricator_* databases."
-msgstr "MySQL管理者アカウントのユーザー名を入力して下さい。そのアカウントはphabricator_*データベースの作成権限が必要です。"
+"Please enter the username of a MySQL account that has enough privileges to "
+"create and use phabricator_* databases."
+msgstr ""
+"phabricator_*データベースの作成権限のあるMySQLアカウントのユーザー名を入力し"
+"て下さい。"
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
-msgid "You can create such a user with the following mysql command:"
+msgid "You can create such a user with the following MySQL command:"
 msgstr "次のMySQLコマンドでそのようなユーザーを作成することができます:"
 
 #. Type: string
@@ -58,24 +64,27 @@ msgstr "次のMySQLコマンドでそのようなユーザーを作成するこ�
 msgid ""
 "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
 "identified by 'PASSWORD';"
-msgstr "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost identified by '「パースワード」';"
+msgstr ""
+"grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
+"identified by '「パースワード」';"
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:3001
-msgid "Mysql administrator password:"
-msgstr "Mysqlの管理者アカウントのパスワード:"
+msgid "MySQL administrator account password:"
+msgstr "MySQL管理者アカウントのパスワード:"
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
-msgid "Mysql administrator password confirmation:"
-msgstr "Mysqlの管理者アカウントのパスワード(再入力):"
+msgid "MySQL administrator account password confirmation:"
+msgstr "MySQL管理者アカウントのパスワード(再入力):"
 
 #. Type: password
 #. Description
 #: ../phabricator.templates:4001
-msgid "Please enter your Mysql administrator password again for confirmation."
+msgid ""
+"Please enter the MySQL administrator account password again for confirmation."
 msgstr "確認のため、管理者アカウントのパスワードを再度入力してください。"
 
 #. Type: error
@@ -88,7 +97,9 @@ msgstr "パスワード入力エラー"
 #. Description
 #: ../phabricator.templates:5001
 msgid "The two passwords you entered were not the same. Please try again."
-msgstr "入力した2つのパスワードが同じではありませんでした。もう一度やり直してください。"
+msgstr ""
+"入力した2つのパスワードが同じではありませんでした。もう一度やり直してくださ"
+"い。"
 
 #. Type: select
 #. Choices
@@ -106,9 +117,8 @@ msgstr "Webサーバー："
 #. Description
 #: ../phabricator.templates:6002
 msgid ""
-"Please select the web server for which Phabricator should be automatically "
-"configured."
-msgstr "Phabricatorを自動的に設定するWebサーバーを選択してください。"
+"Please select the web server to configure automatically for Phabricator."
+msgstr "Phabricatorのため、自動的に設定するWebサーバーを選択してください。"
 
 #. Type: select
 #. Description

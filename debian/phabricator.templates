@@ -7,21 +7,21 @@ _Description: Domain name or subdomain name used by phabricator:
 
 Template: phabricator/phabricator_mysql_user
 Type: string
-_Description: Mysql administrator username:
- Please enter the username of a Mysql server administrator. This account must have enough privileges to create phabricator_* databases.
+_Description: MySQL administrator account username:
+ Please enter the username of a MySQL account that has enough privileges to create and use phabricator_* databases.
  .
- You can create such a user with the following mysql command:
+ You can create such a user with the following MySQL command:
  .
  grant all privileges on `phabricator\_%`.* to 'phabricator'@localhost identified by 'PASSWORD';
 
 Template: phabricator/phabricator_mysql_pwd
 Type: password
-_Description: Mysql administrator password:
+_Description: MySQL administrator account password:
 
 Template: phabricator/pwd_check
 Type: password
-_Description: Mysql administrator password confirmation:
- Please enter your Mysql administrator password again for confirmation.
+_Description: MySQL administrator account password confirmation:
+ Please enter the MySQL administrator account password again for confirmation.
 
 Template: phabricator/password_mismatch
 Type: error
@@ -34,7 +34,6 @@ Type: select
 __Choices: apache2, nginx, lighttpd, None
 Default: apache2
 _Description: Web server:
- Please select the web server for which Phabricator should be automatically
- configured.
+ Please select the web server to configure automatically for Phabricator.
  .
  Select "None" if you would like to configure the web server manually.
