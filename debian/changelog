@@ -1,3 +1,9 @@
+phabricator (0~git20141106-2) unstable; urgency=medium
+
+  * added logrotate on phd log files
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Sat, 08 Nov 2014 14:08:25 +0100
+
 phabricator (0~git20141106-1) unstable; urgency=medium
 
   * New upstream version

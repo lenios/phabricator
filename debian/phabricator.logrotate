@@ -1,0 +1,17 @@
+/var/log/phabricator/*.log {
+    daily
+    missingok
+    rotate 14
+    compress
+    delaycompress
+    notifempty
+    create 640 phabricator phabricator
+    sharedscripts
+    prerotate
+        /etc/init.d/phd stop >/dev/null
+    endscript
+    postrotate
+        /etc/init.d/phd start >/dev/null
+    endscript
+}
+
