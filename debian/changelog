@@ -1,3 +1,10 @@
+phabricator (0~git20141115-2) unstable; urgency=medium
+
+  * avoid mysql configuration in postinst if no credential provided
+    (closes: #769534)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Sat, 15 Nov 2014 15:52:12 +0100
+
 phabricator (0~git20141115-1) unstable; urgency=medium
 
   * New upstream version

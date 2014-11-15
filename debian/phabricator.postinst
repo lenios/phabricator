@@ -16,13 +16,6 @@ phabricator_mysql_pwd="$RET"
 db_get "phabricator/webserver"
 WWWTYPE="$RET"
 
-ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.apache.conf /etc/apache2/conf-available/phabricator.conf
-ucfr phabricator /etc/apache2/conf-available/phabricator.conf
-ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.lighttpd.conf /etc/lighttpd/conf-available/20-phabricator.conf
-ucfr phabricator /etc/lighttpd/conf-available/20-phabricator.conf
-ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.nginx.conf /etc/nginx/sites-available/phabricator.conf
-ucfr phabricator /etc/nginx/sites-available/phabricator.conf
-
 db_stop
 
 #unprivileged system user to run the phabricator daemons
@@ -40,29 +33,42 @@ for dir in $pid_directory $repo_default_local_path $log_directory; do
   chown phabricator:nogroup $dir
 done
 
-
-/usr/share/phabricator/bin/config set mysql.host localhost
-/usr/share/phabricator/bin/config set mysql.user $phabricator_mysql_user
-/usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
 /usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
-/usr/share/phabricator/bin/config set storage.mysql-engine.max-size 0
 /usr/share/phabricator/bin/config set storage.local-disk.path $local_disk_path
-
 #PHP doesn't provide the correct timezone, so we override the (default) date.timezone php setting
 #see http://us3.php.net/date_default_timezone_get
 /usr/share/phabricator/bin/config set phabricator.timezone $(cat /etc/timezone)
 
 /usr/share/phabricator/bin/config set phd.pid-directory $pid_directory
-#this is where phabricator daemon will set up repositories
+#repository.default-local-path is where phabricator daemon will set up repositories
 /usr/share/phabricator/bin/config set repository.default-local-path $repo_default_local_path
 /usr/share/phabricator/bin/config set phd.log-directory $log_directory 
 
-/usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
+if [[ -n $phabricator_mysql_user && -n $phabricator_mysql_pwd ]]; then
+	/usr/share/phabricator/bin/config set mysql.host localhost
+	/usr/share/phabricator/bin/config set mysql.user $phabricator_mysql_user
+	/usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
+	/usr/share/phabricator/bin/config set storage.mysql-engine.max-size 0
+	/usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
+#TODO:
+#else
+#	echo "Not finished. please reconfigure"
+fi
+
+
+### Webserver configuration
+
+ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.apache.conf /etc/apache2/conf-available/phabricator.conf
+ucfr phabricator /etc/apache2/conf-available/phabricator.conf
+ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.lighttpd.conf /etc/lighttpd/conf-available/20-phabricator.conf
+ucfr phabricator /etc/lighttpd/conf-available/20-phabricator.conf
+ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.nginx.conf /etc/nginx/sites-available/phabricator.conf
+ucfr phabricator /etc/nginx/sites-available/phabricator.conf
 
 # Update the webserver, if needed
 case $WWWTYPE in
     apache2)
-	#TODO: check if this is really good to modify the file here
+	#TODO: check if this is really the best place to modify the file
 	sed -i "s/  ServerName .*/  ServerName $domain_name/" /etc/apache2/conf-available/phabricator.conf
 #       Sniplet adjusted from http://wiki.debian.org/Apache/PackagingFor24
 	if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
