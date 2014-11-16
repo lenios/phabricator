@@ -68,7 +68,7 @@ msgid ""
 "identified by 'PASSWORD';"
 msgstr ""
 "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
-"identified by 'PASSWORD';"
+"identified by 'PALAVRA_PASSE';"
 
 #. Type: password
 #. Description
