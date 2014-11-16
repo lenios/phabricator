@@ -16,8 +16,6 @@ phabricator_mysql_pwd="$RET"
 db_get "phabricator/webserver"
 WWWTYPE="$RET"
 
-db_stop
-
 #unprivileged system user to run the phabricator daemons
 adduser --system --group --home "/var/lib/phabricator" --quiet phabricator || true
 
@@ -50,10 +48,10 @@ if [[ -n $phabricator_mysql_user && -n $phabricator_mysql_pwd ]]; then
 	/usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
 	/usr/share/phabricator/bin/config set storage.mysql-engine.max-size 0
 	/usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
+fi
 #TODO:
 #else
 #	echo "Not finished. please reconfigure"
-fi
 
 
 ### Webserver configuration
@@ -64,6 +62,8 @@ ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.lighttpd.conf
 ucfr phabricator /etc/lighttpd/conf-available/20-phabricator.conf
 ucf --debconf-ok /usr/share/phabricator/conf_templates/phabricator.nginx.conf /etc/nginx/sites-available/phabricator.conf
 ucfr phabricator /etc/nginx/sites-available/phabricator.conf
+
+db_stop
 
 # Update the webserver, if needed
 case $WWWTYPE in
