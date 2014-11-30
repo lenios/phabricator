@@ -4,5 +4,10 @@ phabricator for Debian
 * __tests__ directories are packaged on purpose. Do not remove them if you don't want your phabricator instance to FATAL at runtime
 * if you are affected by bug 720434 (http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=720434), daemons won't be able to start properly. This is unfortunate but has nothing to do with phabricator. Get the correct php.ini (cp /usr/share/php5/php.ini-production.cli /etc/php5/cli/php.ini) and the daemons will work as expected.
 * Debian does not allow us to ship the most used passwords list compiled by openwall, so phabricator won't be able to tell you if your password is vulnerable to bruteforce. The openwall list is 3500+ passwords long, but only 634 are 8+ chars long (the minimum password length with phabricator default settings) and only one (winniethepooh) is 12+ chars long. So ensure your users use a long enough password and you won't miss this file. 
+* phabricator needs the php mailparse extension for inbound emails with local MTA. Unfortunately this is not (yet?) packaged for debian due to licensing reasons. See #754977 (https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=754977) for more infos. Please use "sudo pecl install mailparse" if you need to install it.
+
+Diffusion repository hosting
+-----------------
+Phabricator allows you to host repositories and serve them by http/ssh. This unfortunately cannot be done automagically by the phabricator package, so you will need to follow the instructions available at https://secure.phabricator.com/book/phabricator/article/diffusion_hosting/. Please note the daemon-user refered in the documentation is created by this package and is called phabricator. The webserver user is created by your webserver and is usually called www-data.
 
  -- Richard Sellam <richard.sellam@orvidia.fr>, Mon, 19 May 2014 21:19:30 +0100

@@ -1,4 +1,4 @@
-phabricator (0~git20141116-1) unstable; urgency=medium
+phabricator (0~git20141130-1) unstable; urgency=medium
 
   * New upstream version
   * avoid mysql configuration in postinst if no credential provided
@@ -7,8 +7,9 @@ phabricator (0~git20141116-1) unstable; urgency=medium
   * added german to debconf translations (closes: #768965)
   * added logrotate on phd log files
   * fixed po-debconf messages inconsistencies (closes: #768201)
+  * added dutch to debconf translations (closes: #771597)
 
- -- Richard Sellam <richard.sellam@orvidia.fr>  Sun, 16 Nov 2014 05:04:00 +0100
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Sun, 30 Nov 2014 23:52:12 +0100
 
 phabricator (0~git20141101-1) unstable; urgency=medium
 
