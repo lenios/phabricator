@@ -39,14 +39,13 @@ Depends: arcanist,
          libapache2-mod-php5 | libapache2-mod-php5filter | php5,
          libjs-raphael,
          libphutil,
-         mysql-server,
          php5-cli,
          php5-curl,
          php5-mysql | php5-mysqli,
          po-debconf,
          ucf,
          ${misc:Depends}
-Recommends: apache2 (>= 2.2.7) | lighttpd | nginx | httpd, php5-apcu, php5-gd
+Recommends: apache2 (>= 2.2.7) | lighttpd | nginx | httpd, php5-apcu, php5-gd, mariadb-server | mysql-server
 Suggests: flashplugin-nonfree, python
 Description: Software engineering platform
  Phabricator is an open source collection of web applications which make it

@@ -9,6 +9,8 @@ version="$2"
 
 db_get "phabricator/domain_name"
 domain_name="$RET"
+db_get "phabricator/mysql_host"
+mysql_host="$RET"
 db_get "phabricator/phabricator_mysql_user"
 phabricator_mysql_user="$RET"
 db_get "phabricator/phabricator_mysql_pwd"
@@ -43,7 +45,7 @@ done
 /usr/share/phabricator/bin/config set phd.log-directory $log_directory 
 
 if [[ -n $phabricator_mysql_user && -n $phabricator_mysql_pwd ]]; then
-	/usr/share/phabricator/bin/config set mysql.host localhost
+	/usr/share/phabricator/bin/config set mysql.host $mysql_host
 	/usr/share/phabricator/bin/config set mysql.user $phabricator_mysql_user
 	/usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
 	/usr/share/phabricator/bin/config set storage.mysql-engine.max-size 0

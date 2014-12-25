@@ -1,3 +1,10 @@
+phabricator (0~git20141225-1) unstable; urgency=medium
+
+  * New upstream version
+  * switched mysql-server dependency to recommends (closes: #773536)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Thu, 25 Dec 2014 15:49:18 +0100
+
 phabricator (0~git20141130-1) unstable; urgency=medium
 
   * New upstream version

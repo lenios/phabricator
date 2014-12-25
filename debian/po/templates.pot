@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: phabricator\n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
-"POT-Creation-Date: 2014-11-06 21:51+0100\n"
+"POT-Creation-Date: 2014-12-25 14:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,12 +35,27 @@ msgstr ""
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
-msgid "MySQL administrator account username:"
+msgid "hostname or IP address of the MySQL server:"
 msgstr ""
 
 #. Type: string
 #. Description
 #: ../phabricator.templates:2001
+msgid ""
+"Phabricator is usually installed on a dedicated host with the database "
+"server on localhost, but some advanced users might want to put the database "
+"on another host."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+msgid "MySQL administrator account username:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
 msgid ""
 "Please enter the username of a MySQL account that has enough privileges to "
 "create and use phabricator_* databases."
@@ -47,13 +63,13 @@ msgstr ""
 
 #. Type: string
 #. Description
-#: ../phabricator.templates:2001
+#: ../phabricator.templates:3001
 msgid "You can create such a user with the following MySQL command:"
 msgstr ""
 
 #. Type: string
 #. Description
-#: ../phabricator.templates:2001
+#: ../phabricator.templates:3001
 #, no-c-format
 msgid ""
 "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
@@ -62,56 +78,56 @@ msgstr ""
 
 #. Type: password
 #. Description
-#: ../phabricator.templates:3001
+#: ../phabricator.templates:4001
 msgid "MySQL administrator account password:"
 msgstr ""
 
 #. Type: password
 #. Description
-#: ../phabricator.templates:4001
+#: ../phabricator.templates:5001
 msgid "MySQL administrator account password confirmation:"
 msgstr ""
 
 #. Type: password
 #. Description
-#: ../phabricator.templates:4001
+#: ../phabricator.templates:5001
 msgid ""
 "Please enter the MySQL administrator account password again for confirmation."
 msgstr ""
 
 #. Type: error
 #. Description
-#: ../phabricator.templates:5001
+#: ../phabricator.templates:6001
 msgid "Password input error"
 msgstr ""
 
 #. Type: error
 #. Description
-#: ../phabricator.templates:5001
+#: ../phabricator.templates:6001
 msgid "The two passwords you entered were not the same. Please try again."
 msgstr ""
 
 #. Type: select
 #. Choices
-#: ../phabricator.templates:6001
+#: ../phabricator.templates:7001
 msgid "None"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../phabricator.templates:6002
+#: ../phabricator.templates:7002
 msgid "Web server:"
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../phabricator.templates:6002
+#: ../phabricator.templates:7002
 msgid ""
 "Please select the web server to configure automatically for Phabricator."
 msgstr ""
 
 #. Type: select
 #. Description
-#: ../phabricator.templates:6002
+#: ../phabricator.templates:7002
 msgid "Select \"None\" if you would like to configure the web server manually."
 msgstr ""

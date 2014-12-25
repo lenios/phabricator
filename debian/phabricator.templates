@@ -5,6 +5,13 @@ _Description: Domain name or subdomain name used by phabricator:
  Phabricator must be installed on an entire domain. You can not install it to a path on an existing domain,
  like example.com/phabricator/. Instead, install it to an entire domain or subdomain, like phabricator.example.com.
 
+Template: phabricator/mysql_host
+Type: string
+Default: localhost
+_Description: hostname or IP address of the MySQL server:
+ Phabricator is usually installed on a dedicated host with the database server on localhost, but some advanced users
+ might want to put the database on another host. 
+
 Template: phabricator/phabricator_mysql_user
 Type: string
 _Description: MySQL administrator account username:
