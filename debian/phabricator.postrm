@@ -34,7 +34,7 @@ if [ -e /etc/nginx/sites-enabled/phabricator.conf ]; then
 fi
 
 if [ "$1" = purge ]; then
-  rm -rf /usr/share/phabricator/conf/local
+  rm -rf /var/lib/phabricator/local.json
   rm -rf /var/run/phabricator
   rm -rf /var/log/phabricator
   if [ -x "$(command -v deluser)" ]; then

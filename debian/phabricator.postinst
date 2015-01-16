@@ -25,6 +25,7 @@ local_disk_path="/var/lib/phabricator/phd_storage"
 pid_directory="/var/run/phabricator"
 repo_default_local_path="/var/lib/phabricator/repositories"
 log_directory="/var/log/phabricator"
+local_conf_file="/var/lib/phabricator/local.json"
 
 for dir in $pid_directory $repo_default_local_path $log_directory; do
   if [ ! -d $dir ]; then
@@ -32,6 +33,11 @@ for dir in $pid_directory $repo_default_local_path $log_directory; do
   fi
   chown phabricator:nogroup $dir
 done
+
+#we need to restrict access to the file containing sensitive information
+touch $local_conf_file
+chmod 640 $local_conf_file
+chown root:www-data $local_conf_file
 
 /usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
 /usr/share/phabricator/bin/config set storage.local-disk.path $local_disk_path

@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+install|upgrade)
+  if dpkg --compare-versions "$2" le "0~git20150115-1~"; then
+    mv /usr/share/phabricator/conf/local/local.json /var/lib/phabricator/local.json || true
+  fi
+esac
+
+#DEBHELPER#
+
+exit 0
+
