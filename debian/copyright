@@ -87,10 +87,6 @@ Files: phabricator/externals/twilio-php/package.php
 Copyright: 2014, Twilio, Inc. <help at twilio dot com>
 License: Apache-2.0
 
-Files: phabricator/externals/vegas/*
-Copyright: ALCARAZ Marc <ekameleon@gmail.com>
-License: MPL-1.1 or GPL-2+ or LGPL-2.1
-
 Files: phabricator/externals/wepay/*
 Copyright: 2013 WePay, Inc. <api@wepay.com>
 License: Expat
