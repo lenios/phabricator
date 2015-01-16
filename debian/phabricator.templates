@@ -9,8 +9,8 @@ Template: phabricator/mysql_host
 Type: string
 Default: localhost
 _Description: hostname or IP address of the MySQL server:
- Phabricator is usually installed on a dedicated host with the database server on localhost, but some advanced users
- might want to put the database on another host. 
+ Phabricator is usually installed with the MySQL database on the same host (referred as localhost), but some advanced
+ users might want to put the database on a different host.
 
 Template: phabricator/phabricator_mysql_user
 Type: string

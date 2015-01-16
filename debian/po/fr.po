@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phabricator\n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
-"POT-Creation-Date: 2014-12-25 14:41+0100\n"
+"POT-Creation-Date: 2015-01-16 23:23+0100\n"
 "PO-Revision-Date: 2014-06-22 16:37+0200\n"
 "Last-Translator: Richard SELLAM <richard.sellam@orvidia.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,13 +45,13 @@ msgstr "Nom d'hôte ou adresse IP du serveur MySQL:"
 #. Description
 #: ../phabricator.templates:2001
 msgid ""
-"Phabricator is usually installed on a dedicated host with the database "
-"server on localhost, but some advanced users might want to put the database "
-"on another host."
+"Phabricator is usually installed with the MySQL database on the same host "
+"(referred as localhost), but some advanced users might want to put the "
+"database on a different host."
 msgstr ""
-"Phabricator est généralement installé sur une machine dédiée, avec la base "
-"de données sur localhost, mais certains utilisateurs avancés pourraient "
-"vouloir mettre la base de données sur une autre machine."
+"Phabricator est généralement installé avec la base de données MySQL sur la"
+"même machine (désignée par localhost), mais certains utilisateurs avancés"
+"pourraient vouloir mettre la base de données sur une autre machine."
 
 #. Type: string
 #. Description
