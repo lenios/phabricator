@@ -15,11 +15,11 @@ Copyright: 2014 Markus Hiereth <markus.hiereth@freenet.de>
 License: Apache-2.0
 
 Files: debian/po/nl.po
-Copyright: 2014 Frans Spiesschaert <Frans.Spiesschaert@yucom.be>
+Copyright: 2014-2015 Frans Spiesschaert <Frans.Spiesschaert@yucom.be>
 License: Apache-2.0
 
 Files: debian/po/pt.po
-Copyright: 2014 Américo Monteiro <a_monteiro@gmx.com>
+Copyright: 2014-2015 Américo Monteiro <a_monteiro@gmx.com>
 License: Apache-2.0
 
 Files: debian/g.raphael/*

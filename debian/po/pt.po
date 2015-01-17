@@ -2,13 +2,13 @@
 # Copyright (C) 2014 THE phabricator'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the phabricator package.
 #
-# Américo Monteiro <a_monteiro@gmx.com>, 2014.
+# Américo Monteiro <a_monteiro@gmx.com>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: phabricator \n"
 "Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
 "POT-Creation-Date: 2015-01-16 23:23+0100\n"
-"PO-Revision-Date: 2014-11-15 01:26+0000\n"
+"PO-Revision-Date: 2015-01-17 01:19+0000\n"
 "Last-Translator: Américo Monteiro <a_monteiro@gmx.com>\n"
 "Language-Team: Portuguese <traduz@debianpt.org>\n"
 "Language: pt\n"
@@ -41,7 +41,7 @@ msgstr ""
 #. Description
 #: ../phabricator.templates:2001
 msgid "hostname or IP address of the MySQL server:"
-msgstr ""
+msgstr "nome de máquina ou endereço IP do servidor MySQL:"
 
 #. Type: string
 #. Description
@@ -51,6 +51,9 @@ msgid ""
 "(referred as localhost), but some advanced users might want to put the "
 "database on a different host."
 msgstr ""
+"Geralmente o Phabricator é instalado com a base de dados MySQL na mesma "
+"máquina (referida como localhost), mas alguns utilizadores avançados podem "
+"querer meter a base de dados numa máquina diferente."
 
 #. Type: string
 #. Description
@@ -83,7 +86,7 @@ msgid ""
 "identified by 'PASSWORD';"
 msgstr ""
 "grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
-"identified by 'PALAVRA_PASSE';"
+"identified by 'PASSWORD';"
 
 #. Type: password
 #. Description
@@ -146,3 +149,4 @@ msgstr ""
 msgid "Select \"None\" if you would like to configure the web server manually."
 msgstr ""
 "Seleccione \"Nenhum\" se desejar configurar manualmente o servidor web."
+
