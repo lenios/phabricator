@@ -22,12 +22,11 @@ WWWTYPE="$RET"
 adduser --system --group --home "/var/lib/phabricator" --quiet phabricator || true
 
 local_disk_path="/var/lib/phabricator/phd_storage"
-pid_directory="/var/run/phabricator"
 repo_default_local_path="/var/lib/phabricator/repositories"
 log_directory="/var/log/phabricator"
 local_conf_file="/var/lib/phabricator/local.json"
 
-for dir in $pid_directory $repo_default_local_path $log_directory; do
+for dir in $repo_default_local_path $log_directory; do
   if [ ! -d $dir ]; then
     mkdir -p $dir
   fi
@@ -45,7 +44,7 @@ chown root:www-data $local_conf_file
 #see http://us3.php.net/date_default_timezone_get
 /usr/share/phabricator/bin/config set phabricator.timezone $(cat /etc/timezone)
 
-/usr/share/phabricator/bin/config set phd.pid-directory $pid_directory
+/usr/share/phabricator/bin/config set phd.pid-directory "/run/phabricator"
 #repository.default-local-path is where phabricator daemon will set up repositories
 /usr/share/phabricator/bin/config set repository.default-local-path $repo_default_local_path
 /usr/share/phabricator/bin/config set phd.log-directory $log_directory 

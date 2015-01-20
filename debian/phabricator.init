@@ -20,6 +20,7 @@ test -x $DAEMON || exit 0
 . /lib/lsb/init-functions
 
 d_start () {
+	check_pid_dir
         log_daemon_msg "Starting system $DAEMON_NAME Daemon"
 	    start-stop-daemon --start --quiet --chuid $DAEMONUSER --exec $DAEMON -- start
         log_end_msg $?
@@ -30,6 +31,15 @@ d_stop () {
         start-stop-daemon --start --quiet --chuid $DAEMONUSER --exec $DAEMON -- stop
 	    log_end_msg $?
 }
+
+check_pid_dir() {
+    # Create the pid directory if necessary
+    if [ ! -d /run/phabricator ]; then
+        mkdir /run/phabricator
+        chown $DAEMONUSER:nogroup /run/phabricator
+    fi
+}
+
 
 case "$1" in
 
