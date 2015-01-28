@@ -1,12 +1,13 @@
-phabricator (0~git20150115-1) unstable; urgency=medium
+phabricator (0~git20150129-1) unstable; urgency=medium
 
   * New upstream version
   * restricted access to local config file (closes: #775479)
   * moved local config file to /var/lib/phabricator (closes: #775478)
   * switched mysql-server dependency to recommends (closes: #773536)
   * use /run instead of /var/run (closes: #775803)
+  * prevent package reinstall from overwritting local changes (closes: #776288)
 
- -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 20 Jan 2015 23:45:09 +0100
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Thu, 29 Jan 2015 00:15:58 +0100
 
 phabricator (0~git20141130-1) unstable; urgency=medium
 

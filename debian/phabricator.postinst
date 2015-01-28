@@ -38,22 +38,27 @@ touch $local_conf_file
 chmod 640 $local_conf_file
 chown root:www-data $local_conf_file
 
+set_config() {
+  #we check if the configuration option is already set or not, in order to avoid overwritting local modifications
+  [[ $(/usr/share/phabricator/bin/config get $1 | jq -r '.config[] | select(.source=="local") | .status') == "set" ]] || /usr/share/phabricator/bin/config set $1 $2
+}
+
 /usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
-/usr/share/phabricator/bin/config set storage.local-disk.path $local_disk_path
+set_config storage.local-disk.path $local_disk_path
 #PHP doesn't provide the correct timezone, so we override the (default) date.timezone php setting
 #see http://us3.php.net/date_default_timezone_get
-/usr/share/phabricator/bin/config set phabricator.timezone $(cat /etc/timezone)
+set_config phabricator.timezone $(cat /etc/timezone)
 
-/usr/share/phabricator/bin/config set phd.pid-directory "/run/phabricator"
+set_config phd.pid-directory "/run/phabricator"
 #repository.default-local-path is where phabricator daemon will set up repositories
-/usr/share/phabricator/bin/config set repository.default-local-path $repo_default_local_path
-/usr/share/phabricator/bin/config set phd.log-directory $log_directory 
+set_config repository.default-local-path $repo_default_local_path
+set_config phd.log-directory $log_directory
 
 if [[ -n $phabricator_mysql_user && -n $phabricator_mysql_pwd ]]; then
 	/usr/share/phabricator/bin/config set mysql.host $mysql_host
 	/usr/share/phabricator/bin/config set mysql.user $phabricator_mysql_user
 	/usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
-	/usr/share/phabricator/bin/config set storage.mysql-engine.max-size 0
+	set_config storage.mysql-engine.max-size 0
 	/usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
 fi
 #TODO:

@@ -36,6 +36,7 @@ Architecture: all
 Depends: arcanist,
          dbconfig-common (>= 1.8.8),
          fonts-font-awesome,
+         jq,
          libapache2-mod-php5 | libapache2-mod-php5filter | php5,
          libjs-raphael,
          libphutil,
