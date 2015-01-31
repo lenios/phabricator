@@ -1,3 +1,9 @@
+phabricator (0~git20150129-2) unstable; urgency=medium
+
+  * properly clean on purge (closes: #776666)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Sat, 31 Jan 2015 08:16:29 +0100
+
 phabricator (0~git20150129-1) unstable; urgency=medium
 
   * New upstream version

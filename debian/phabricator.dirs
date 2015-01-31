@@ -2,4 +2,5 @@ etc/apache2/conf-available
 etc/lighttpd/conf-available
 etc/nginx/sites-available
 var/lib/phabricator/phd_storage
+var/lib/phabricator/repositories
 var/log/phabricator

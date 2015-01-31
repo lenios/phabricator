@@ -27,9 +27,6 @@ log_directory="/var/log/phabricator"
 local_conf_file="/var/lib/phabricator/local.json"
 
 for dir in $repo_default_local_path $log_directory; do
-  if [ ! -d $dir ]; then
-    mkdir -p $dir
-  fi
   chown phabricator:nogroup $dir
 done
 
