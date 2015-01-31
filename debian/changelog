@@ -6,7 +6,7 @@ phabricator (0~git20150129-2) unstable; urgency=medium
 
 phabricator (0~git20150129-1) unstable; urgency=medium
 
-  * New upstream version
+  * New snapshot release
   * restricted access to local config file (closes: #775479)
   * moved local config file to /var/lib/phabricator (closes: #775478)
   * switched mysql-server dependency to recommends (closes: #773536)
