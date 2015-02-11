@@ -1,9 +1,10 @@
-phabricator (0~git20150129-3) unstable; urgency=medium
+phabricator (0~git20150211-1) unstable; urgency=medium
 
+  * New snapshot release
   * updated german translation
   * fixed daemons not starting with unprivileged user
 
- -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 10 Feb 2015 10:08:35 +0100
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Wed, 11 Feb 2015 14:13:38 +0100
 
 phabricator (0~git20150129-2) unstable; urgency=medium
 
