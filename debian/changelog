@@ -1,6 +1,7 @@
 phabricator (0~git20150129-3) unstable; urgency=medium
 
   * updated german translation
+  * fixed daemons not starting with unprivileged user
 
  -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 10 Feb 2015 10:08:35 +0100
 

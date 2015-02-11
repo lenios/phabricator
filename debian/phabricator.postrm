@@ -37,10 +37,11 @@ if [ "$1" = purge ]; then
   rm -rf /var/lib/phabricator/local.json || true
   rm -rf /run/phabricator || true
   rm -rf /var/log/phabricator || true
-  if [ -x "$(command -v deluser)" ]; then
-    deluser --quiet --system phabricator >/dev/null || true
-  else
-    echo >&2 "not removing phabricator system account because deluser command was not found"
+
+  if getent passwd phabricator >/dev/null; then
+    if [ -x "$(command -v deluser)" ]; then
+      deluser --system phabricator || true
+    fi
   fi
 
   # get rid of configuration files and ucf entries

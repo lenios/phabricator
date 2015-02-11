@@ -18,8 +18,13 @@ phabricator_mysql_pwd="$RET"
 db_get "phabricator/webserver"
 WWWTYPE="$RET"
 
-#unprivileged system user to run the phabricator daemons
-adduser --system --group --home "/var/lib/phabricator" --quiet phabricator || true
+#creating unprivileged system user to run the phabricator daemons
+if ! getent passwd phabricator >/dev/null; then
+	adduser --system  --ingroup www-data --home "/var/lib/phabricator" --quiet phabricator || true
+elif [ $(id -gn phabricator) != www-data ]; then
+	#we have a phabricator user, but it isn't in the right group
+	usermod -g www-data phabricator
+fi
 
 local_disk_path="/var/lib/phabricator/phd_storage"
 repo_default_local_path="/var/lib/phabricator/repositories"
