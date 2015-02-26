@@ -38,8 +38,7 @@ get-orig-source: $(info I: UDATE=$(UDATE))
 	$(RM) -r -v libphutil-$(VER)/src/parser/xhpast/bin/xhpast.exe
 	$(RM) -r -v arcanist-$(VER)/bin/arc.bat
 	cd phabricator-$(VER)/phabricator/ && \
-	$(RM) -r -v webroot/rsrc/swf \
-		externals/twilio-php/docs \
+	$(RM) -r -v externals/twilio-php/docs \
 	    externals/wordlist \
 	    webroot/rsrc/externals/font/fontawesome \
 	    webroot/rsrc/externals/font/sourcesans \

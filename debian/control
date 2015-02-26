@@ -47,7 +47,7 @@ Depends: arcanist,
          ucf,
          ${misc:Depends}
 Recommends: apache2 (>= 2.2.7) | lighttpd | nginx | httpd, php5-apcu, php5-gd, mariadb-server | mysql-server
-Suggests: flashplugin-nonfree, python
+Suggests: python, npm
 Description: Software engineering platform
  Phabricator is an open source collection of web applications which make it
  easier to write, review, and share source code.
