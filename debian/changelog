@@ -1,9 +1,10 @@
-phabricator (0~git20150312-1) unstable; urgency=medium
+phabricator (0~git20150407-1) unstable; urgency=medium
 
   * New snapshot release
   * start mysql before phd daemons, if available (closes: #780260, #780265)
+  * fixed log files permissions (closes: #781825)
 
- -- Richard Sellam <richard.sellam@orvidia.fr>  Thu, 12 Mar 2015 10:20:08 +0100
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 07 Apr 2015 16:06:39 +0200
 
 phabricator (0~git20150211-1) unstable; urgency=medium
 

@@ -5,7 +5,7 @@
     compress
     delaycompress
     notifempty
-    create 640 phabricator phabricator
+    create 640 phabricator root
     sharedscripts
     prerotate
         /etc/init.d/phd stop >/dev/null
