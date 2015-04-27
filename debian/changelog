@@ -3,6 +3,7 @@ phabricator (0~git20150407-1) unstable; urgency=medium
   * New snapshot release
   * start mysql before phd daemons, if available (closes: #780260, #780265)
   * fixed log files permissions (closes: #781825)
+  * added spanish translation (closes: #783566)
 
  -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 07 Apr 2015 16:06:39 +0200
 

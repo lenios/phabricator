@@ -1,0 +1,172 @@
+# phabricator po-debconf translation to Spanish.
+# Copyright (C) 2015 Software in the Public Interest
+# This file is distributed under the same license as the phabricator package.
+#
+# Changes:
+# - Initial translation
+# Jonathan Bustillos <jathanblackred@openmailbox.com>, 2015.
+#
+# Traductores, si no conocen el formato PO, merece la pena leer la
+# documentación de gettext, especialmente las secciones dedicadas a este
+# formato, por ejemplo ejecutando:
+# info -n '(gettext)PO Files'
+# info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor lean antes de traducir
+# los siguientes documentos:
+#
+# - El proyecto de traducción de Debian al español
+# http://www.debian.org/intl/spanish/
+# especialmente las notas y normas de traducción en
+# http://www.debian.org/intl/spanish/notas
+#
+# - La guía de traducción de po's de debconf:
+# /usr/share/doc/po-debconf/README-trans
+# o http://www.debian.org/intl/l10n/po-debconf/README-trans
+msgid ""
+msgstr ""
+"Project-Id-Version: phabricator\n"
+"Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
+"POT-Creation-Date: 2015-01-16 23:23+0100\n"
+"PO-Revision-Date: 2015-04-24 10:34-0500\n"
+"Last-Translator: Jonathan Bustillos <jathanblackred@openmailbox.com>\n"
+"Language-Team: Debian Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:1001
+msgid "Domain name or subdomain name used by phabricator:"
+msgstr "Nombre de dominio o de subdominio que usará phabricator:"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:1001
+msgid ""
+"Phabricator must be installed on an entire domain. You can not install it to "
+"a path on an existing domain, like example.com/phabricator/. Instead, "
+"install it to an entire domain or subdomain, like phabricator.example.com."
+msgstr ""
+"Phabricator debe estar instalado en un dominio completo. No puede instalarlo "
+"en una ruta de un dominio existente, como «example.com/\n"
+"phabricator/». En lugar de eso, instálelo en un dominio o subdominio "
+"completo, como «phabricator.example.com»."
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+msgid "hostname or IP address of the MySQL server:"
+msgstr "Nombre de equipo o dirección IP del servidor MySQL:"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+msgid ""
+"Phabricator is usually installed with the MySQL database on the same host "
+"(referred as localhost), but some advanced users might want to put the "
+"database on a different host."
+msgstr ""
+"Phabricator se instala habitualmente junto con la base de datos MySQL en el "
+"mismo equipo (localhost), pero es posible que algunos usuarios prefieran "
+"instalar la base de datos en un equipo diferente."
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+msgid "MySQL administrator account username:"
+msgstr "Nombre de usuario para la cuenta de administrador de MySQL."
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+msgid ""
+"Please enter the username of a MySQL account that has enough privileges to "
+"create and use phabricator_* databases."
+msgstr ""
+"Introduzca el nombre de usuario de una cuenta MySQL que tenga suficientes "
+"privilegios para crear y usar las bases de datos «phabricator_*»."
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+msgid "You can create such a user with the following MySQL command:"
+msgstr "Puede crear un usuario de este tipo con la siguiente orden de MySQL:"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+#, no-c-format
+msgid ""
+"grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
+"identified by 'PASSWORD';"
+msgstr ""
+"grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
+"identified by 'PASSWORD';"
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:4001
+msgid "MySQL administrator account password:"
+msgstr "Contraseña de la cuenta de administrador de MySQL."
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:5001
+msgid "MySQL administrator account password confirmation:"
+msgstr "Confirmación de la contraseña de la cuenta de administrador de MySQL:"
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:5001
+msgid ""
+"Please enter the MySQL administrator account password again for confirmation."
+msgstr ""
+"Vuelva a introducir la contraseña de la cuenta de administrador de MySQL "
+"para confirmarla."
+
+#. Type: error
+#. Description
+#: ../phabricator.templates:6001
+msgid "Password input error"
+msgstr "Error al introducir la contraseña."
+
+#. Type: error
+#. Description
+#: ../phabricator.templates:6001
+msgid "The two passwords you entered were not the same. Please try again."
+msgstr ""
+"Las dos contraseñas que ha introducido no son iguales. Inténtelo de nuevo."
+
+#. Type: select
+#. Choices
+#: ../phabricator.templates:7001
+msgid "None"
+msgstr "Ninguno"
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:7002
+msgid "Web server:"
+msgstr "Servidor web:"
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:7002
+msgid ""
+"Please select the web server to configure automatically for Phabricator."
+msgstr ""
+"Seleccione el servidor web que se configurará automáticamente para "
+"Phabricator."
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:7002
+msgid "Select \"None\" if you would like to configure the web server manually."
+msgstr ""
+"Seleccione «Ninguno» si prefiere hacer la configuración del servidor "
+"manualmente."
