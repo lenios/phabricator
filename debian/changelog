@@ -1,4 +1,4 @@
-phabricator (0~git20150407-1) unstable; urgency=medium
+phabricator (0~git20150428-1) unstable; urgency=medium
 
   * New snapshot release
   * fixed nginx configuration (closes: #779705)
@@ -6,7 +6,7 @@ phabricator (0~git20150407-1) unstable; urgency=medium
   * fixed log files permissions (closes: #781825)
   * added spanish translation (closes: #783566)
 
- -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 07 Apr 2015 16:06:39 +0200
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 28 Apr 2015 03:01:19 +0200
 
 phabricator (0~git20150211-1) unstable; urgency=medium
 
