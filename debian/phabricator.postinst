@@ -110,7 +110,8 @@ case $WWWTYPE in
     nginx)
 	if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
             sed -i "s/  server_name .*/  server_name $domain_name;/" /etc/nginx/sites-available/phabricator.conf
-	    ln -s /etc/nginx/sites-available/phabricator.conf /etc/nginx/sites-enabled/phabricator.conf
+	    [ ! -h /etc/nginx/sites-enabled/phabricator.conf ] && \
+            ln -s /etc/nginx/sites-available/phabricator.conf /etc/nginx/sites-enabled/phabricator.conf
 	fi
 	;;
     *)

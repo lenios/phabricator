@@ -1,3 +1,10 @@
+phabricator (0~git20150525-1) unstable; urgency=medium
+
+  * New snapshot release
+  * fix update postinst when using nginx (closes: #784221)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Mon, 25 May 2015 22:45:19 +0200
+
 phabricator (0~git20150428-1) unstable; urgency=medium
 
   * New snapshot release
