@@ -1,2 +1,2 @@
 arcanist usr/share
-arcanist/resources/shell/bash-completion etc/bash_completion.d
+arcanist/resources/shell/arcanist.bash-completion etc/bash_completion.d

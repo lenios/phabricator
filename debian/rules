@@ -37,6 +37,7 @@ get-orig-source: $(info I: UDATE=$(UDATE))
 	echo "# Cleaning-up..."
 	$(RM) -r -v libphutil-$(VER)/src/parser/xhpast/bin/xhpast.exe
 	$(RM) -r -v arcanist-$(VER)/bin/arc.bat
+	@mv arcanist-$(VER)/resources/shell/bash-completion arcanist-$(VER)/resources/shell/arcanist.bash-completion
 	cd phabricator-$(VER)/phabricator/ && \
 	$(RM) -r -v externals/twilio-php/docs \
 	    externals/wordlist \

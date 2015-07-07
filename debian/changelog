@@ -1,3 +1,10 @@
+phabricator (0~git20150709-1) unstable; urgency=medium
+
+  * New snapshot release
+  * renamed arcanist bash-completion file (closes: #791632)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Thu, 09 Jul 2015 05:24:50 +0200
+
 phabricator (0~git20150628-1) unstable; urgency=medium
 
   * New snapshot release (closes: #789760)
