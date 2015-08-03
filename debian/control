@@ -23,7 +23,7 @@ Description: Shared library for Arcanist and Phabricator
 
 Package: arcanist
 Architecture: all
-Depends: libphutil, php5-cli, php5-curl, ${misc:Depends}
+Depends: libphutil (= ${source:Version}), php5-cli, php5-curl, ${misc:Depends}
 Conflicts: arc
 Suggests: python
 Description: Command line interface for Phabricator (review platform)
@@ -39,10 +39,10 @@ Depends: arcanist,
          jq,
          libapache2-mod-php5 | libapache2-mod-php5filter | php5-fpm | php5,
          libjs-raphael,
-         libphutil,
+         libphutil (= ${source:Version}),
          php5-cli,
          php5-curl,
-         php5-mysql | php5-mysqli,
+         php5-mysql | php5-mysqli | php5-mysqlnd,
          po-debconf,
          ucf,
          ${misc:Depends}

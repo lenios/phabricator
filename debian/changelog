@@ -1,15 +1,11 @@
-phabricator (0~git20150709-1) unstable; urgency=medium
-
-  * New snapshot release
-  * renamed arcanist bash-completion file (closes: #791632)
-
- -- Richard Sellam <richard.sellam@orvidia.fr>  Thu, 09 Jul 2015 05:24:50 +0200
-
-phabricator (0~git20150628-1) unstable; urgency=medium
+phabricator (0~git20150803-1) unstable; urgency=medium
 
   * New snapshot release (closes: #789760)
+  * renamed arcanist bash-completion file (closes: #791632)
+  * depends on same version for libphutil (closes: #794462)
+  * added php5-mysqlnd alternative depends (closes: #792136)
 
- -- Richard Sellam <richard.sellam@orvidia.fr>  Sun, 28 Jun 2015 12:23:04 +0200
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Mon, 03 Aug 2015 23:28:35 +0200
 
 phabricator (0~git20150613-1) unstable; urgency=medium
 
