@@ -46,7 +46,7 @@ set_config() {
 }
 
 case "$1" in
-install)
+configure)
     /usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
 esac
 
