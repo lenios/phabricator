@@ -45,7 +45,10 @@ set_config() {
     [[ $(/usr/share/phabricator/bin/config get $1 | jq -r '.config[] | select(.source=="local") | .status') == "set" ]] || /usr/share/phabricator/bin/config set $1 $2
 }
 
-/usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
+case "$1" in
+install)
+    /usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
+esac
 
 set_config storage.local-disk.path $local_disk_path
 #PHP doesn't provide the correct timezone, so we override the (default) date.timezone php setting
