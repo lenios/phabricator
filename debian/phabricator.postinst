@@ -142,7 +142,7 @@ if ! dpkg-statoverride --list $local_disk_path >/dev/null 2>&1; then
 fi
 #DEBHELPER#
 
-echo "Installation complete. You can now access Phabricator at http://$domain_name/."
+echo "Installation complete. You can now access Phabricator at $(/usr/share/phabricator/bin/config get phabricator.base-uri | jq '.config[0].value')"
 
 exit 0
 
