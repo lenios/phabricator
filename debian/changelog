@@ -2,6 +2,7 @@ phabricator (0~git20150906-1) unstable; urgency=medium
 
   * New snapshot release
   * use dpkg-statoverride in postinst/postrm (closes: #792140)
+  * fixed apache config file for php-fpm (closes: #795256)
   * removed debian patch as it is no longer needed
 
  -- Richard Sellam <richard.sellam@orvidia.fr>  Sun, 06 Sep 2015 15:18:40 +0200
