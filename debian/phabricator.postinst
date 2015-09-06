@@ -20,10 +20,10 @@ WWWTYPE="$RET"
 
 #creating unprivileged system user to run the phabricator daemons
 if ! getent passwd phabricator >/dev/null; then
-	adduser --system  --ingroup www-data --home "/var/lib/phabricator" --quiet phabricator || true
+    adduser --system  --ingroup www-data --home "/var/lib/phabricator" --quiet phabricator || true
 elif [ $(id -gn phabricator) != www-data ]; then
-	#we have a phabricator user, but it isn't in the right group
-	usermod -g www-data phabricator
+    #we have a phabricator user, but it isn't in the right group
+    usermod -g www-data phabricator
 fi
 
 local_disk_path="/var/lib/phabricator/phd_storage"
@@ -32,20 +32,21 @@ log_directory="/var/log/phabricator"
 local_conf_file="/var/lib/phabricator/local.json"
 
 for dir in $repo_default_local_path $log_directory; do
-  chown phabricator:nogroup $dir
+    #create a statoverride unless one already exists
+    if ! dpkg-statoverride --list $dir >/dev/null 2>&1; then
+        dpkg-statoverride --update --add phabricator nogroup 755 $dir 
+    fi
 done
 
-#we need to restrict access to the file containing sensitive information
 touch $local_conf_file
-chmod 640 $local_conf_file
-chown root:www-data $local_conf_file
 
 set_config() {
-  #we check if the configuration option is already set or not, in order to avoid overwritting local modifications
-  [[ $(/usr/share/phabricator/bin/config get $1 | jq -r '.config[] | select(.source=="local") | .status') == "set" ]] || /usr/share/phabricator/bin/config set $1 $2
+    #we check if the configuration option is already set or not, in order to avoid overwritting local modifications
+    [[ $(/usr/share/phabricator/bin/config get $1 | jq -r '.config[] | select(.source=="local") | .status') == "set" ]] || /usr/share/phabricator/bin/config set $1 $2
 }
 
 /usr/share/phabricator/bin/config set phabricator.base-uri http://$domain_name/
+
 set_config storage.local-disk.path $local_disk_path
 #PHP doesn't provide the correct timezone, so we override the (default) date.timezone php setting
 #see http://us3.php.net/date_default_timezone_get
@@ -57,16 +58,19 @@ set_config repository.default-local-path $repo_default_local_path
 set_config phd.log-directory $log_directory
 
 if [[ -n $phabricator_mysql_user && -n $phabricator_mysql_pwd ]]; then
-	/usr/share/phabricator/bin/config set mysql.host $mysql_host
-	/usr/share/phabricator/bin/config set mysql.user $phabricator_mysql_user
-	/usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
-	set_config storage.mysql-engine.max-size 0
-	/usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
+    /usr/share/phabricator/bin/config set mysql.host $mysql_host
+    /usr/share/phabricator/bin/config set mysql.user $phabricator_mysql_user
+    /usr/share/phabricator/bin/config set mysql.pass $phabricator_mysql_pwd
+    set_config storage.mysql-engine.max-size 0
+    /usr/share/phabricator/bin/storage upgrade --user $phabricator_mysql_user --password $phabricator_mysql_pwd --force
 fi
 #TODO:
 #else
 #	echo "Not finished. please reconfigure"
 
+if ! dpkg-statoverride --list $local_conf_file >/dev/null 2>&1; then
+    dpkg-statoverride --update --add root www-data 640 $local_conf_file 
+fi
 
 ### Webserver configuration
 
@@ -82,40 +86,39 @@ db_stop
 # Update the webserver, if needed
 case $WWWTYPE in
     apache2)
-	#TODO: check if this is really the best place to modify the file
-	sed -i "s/  ServerName .*/  ServerName $domain_name/" /etc/apache2/conf-available/phabricator.conf
-#       Sniplet adjusted from http://wiki.debian.org/Apache/PackagingFor24
-	if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
-	    . /usr/share/apache2/apache2-maintscript-helper
-	    apache2_invoke enmod rewrite
-	    apache2_invoke enconf phabricator.conf
-	elif  dpkg-query -f '${Version}'  -W 'apache2.2-common' > /dev/null 2>&1 ; then
-	    a2enmod -q rewrite
-	    [ -d /etc/apache2/conf.d/ ] && [ ! -h /etc/apache2/conf.d/phabricator.conf ] && \
-		ln -s ../conf-available/phabricator.conf /etc/apache2/conf.d/phabricator.conf
-	else
-	    echo "Apache2 not installed, skipping"
-	fi
-	;;
+        #TODO: check if this is really the best place to modify the file
+        sed -i "s/  ServerName .*/  ServerName $domain_name/" /etc/apache2/conf-available/phabricator.conf
+        #       Sniplet adjusted from http://wiki.debian.org/Apache/PackagingFor24
+        if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
+            . /usr/share/apache2/apache2-maintscript-helper
+            apache2_invoke enmod rewrite
+            apache2_invoke enconf phabricator.conf
+        elif  dpkg-query -f '${Version}'  -W 'apache2.2-common' > /dev/null 2>&1; then
+            a2enmod -q rewrite
+            [ -d /etc/apache2/conf.d/ ] && [ ! -h /etc/apache2/conf.d/phabricator.conf ] && ln -s ../conf-available/phabricator.conf /etc/apache2/conf.d/phabricator.conf
+        else
+            echo "Apache2 not installed, skipping"
+        fi
+        ;;
     lighttpd)
-	if [ -e /etc/lighttpd/conf-available/20-phabricator.conf ] ; then
-	    sed -i "s/\$HTTP\[\"host\"\] =.* {/\$HTTP[\"host\"] == \"$domain_name\" {/" /etc/lighttpd/conf-available/20-phabricator.conf
-	    if which lighty-enable-mod >/dev/null 2>&1 ; then
-		lighty-enable-mod phabricator
-	    else
-		echo "Lighttpd not installed, skipping"
-	    fi
-	fi
-	;;
+        if [ -e /etc/lighttpd/conf-available/20-phabricator.conf ] ; then
+            sed -i "s/\$HTTP\[\"host\"\] =.* {/\$HTTP[\"host\"] == \"$domain_name\" {/" /etc/lighttpd/conf-available/20-phabricator.conf
+            if which lighty-enable-mod >/dev/null 2>&1 ; then
+                lighty-enable-mod phabricator
+            else
+                echo "Lighttpd not installed, skipping"
+            fi
+        fi
+        ;;
     nginx)
-	if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
+        if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
             sed -i "s/  server_name .*/  server_name $domain_name;/" /etc/nginx/sites-available/phabricator.conf
-	    [ ! -h /etc/nginx/sites-enabled/phabricator.conf ] && \
-            ln -s /etc/nginx/sites-available/phabricator.conf /etc/nginx/sites-enabled/phabricator.conf
-	fi
-	;;
+            [ ! -h /etc/nginx/sites-enabled/phabricator.conf ] && ln -s /etc/nginx/sites-available/phabricator.conf /etc/nginx/sites-enabled/phabricator.conf
+        fi
+        ;;
     *)
-	;;
+
+        ;;
 esac
 
 # Always trigger reload of webservers if the configuration is enabled
@@ -123,7 +126,7 @@ if [ -e /etc/apache2/conf.d/phabricator.conf -o -e /etc/apache2/conf-enabled/pha
     invoke-rc.d apache2 reload || true
 fi
 if [ -e /etc/lighttpd/conf-enabled/20-phabricator.conf ] ; then
-#   We need to take care: bug #446324
+    #   We need to take care: bug #446324
     invoke-rc.d lighttpd reload 3>/dev/null || true
 fi
 if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
@@ -131,8 +134,9 @@ if [ -e /etc/nginx/sites-available/phabricator.conf ] ; then
 fi
 
 #we need to have a readable/writable local disk storage!
-chown www-data:www-data $local_disk_path
-
+if ! dpkg-statoverride --list $local_disk_path >/dev/null 2>&1; then
+    dpkg-statoverride --update --add www-data www-data 755 $local_disk_path
+fi
 #DEBHELPER#
 
 echo "Installation complete. You can now access Phabricator at http://$domain_name/."

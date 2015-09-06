@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+local_disk_path="/var/lib/phabricator/phd_storage"
+repo_default_local_path="/var/lib/phabricator/repositories"
+log_directory="/var/log/phabricator"
+local_conf_file="/var/lib/phabricator/local.json"
+
 #
 # Skip, if we are not in "remove" or "purge" state
 # 
@@ -11,20 +16,20 @@ fi
 # update the webserver, if needed
 # apache2
 if [ -e /etc/apache2/conf.d/phabricator.conf -o -e /etc/apache2/conf-enabled/phabricator.conf ]; then
-#   Sniplet adjusted from http://wiki.debian.org/Apache/PackagingFor24
+    #   Sniplet adjusted from http://wiki.debian.org/Apache/PackagingFor24
     if [ -e /usr/share/apache2/apache2-maintscript-helper ] ; then
-	. /usr/share/apache2/apache2-maintscript-helper
-	apache2_invoke disconf phabricator.conf
-	apache2_invoke dismod rewrite
+        . /usr/share/apache2/apache2-maintscript-helper
+        apache2_invoke disconf phabricator.conf
+        apache2_invoke dismod rewrite
     elif  dpkg-query -f '${Version}'  -W 'apache2.2-common' > /dev/null 2>&1 ; then
-	[ -h /etc/apache2/conf.d/phabricator.conf ] && rm /etc/apache2/conf.d/phabricator.conf
-	invoke-rc.d apache2 reload || true
+        [ -h /etc/apache2/conf.d/phabricator.conf ] && rm /etc/apache2/conf.d/phabricator.conf
+        invoke-rc.d apache2 reload || true
     fi
 fi
 # lighttpd
 if which lighty-disable-mod >/dev/null 2>&1 ; then
     lighty-disable-mod phabricator || true
-#   We need to take care: bug #446324
+    #   We need to take care: bug #446324
     invoke-rc.d lighttpd reload 3>/dev/null || true
 fi
 #nginx
@@ -34,35 +39,41 @@ if [ -e /etc/nginx/sites-enabled/phabricator.conf ]; then
 fi
 
 if [ "$1" = purge ]; then
-  rm -rf /var/lib/phabricator/local.json || true
-  rm -rf /run/phabricator || true
-  rm -rf /var/log/phabricator || true
+    rm -rf $local_conf_file || true
+    rm -rf /run/phabricator || true
+    rm -rf $log_directory || true
 
-  if getent passwd phabricator >/dev/null; then
-    if [ -x "$(command -v deluser)" ]; then
-      deluser --system phabricator || true
+    for i in $local_disk_path $repo_default_local_path $log_directory $local_conf_file; do
+        if dpkg-statoverride --list $i >/dev/null 2>&1; then
+            dpkg-statoverride --remove $i
+        fi
+    done
+
+    if getent passwd phabricator >/dev/null; then
+        if [ -x "$(command -v deluser)" ]; then
+            deluser --system phabricator || true
+        fi
     fi
-  fi
 
-  # get rid of configuration files and ucf entries
-  for config_file in \
-    /etc/apache2/conf-available/phabricator.conf \
-    /etc/lighttpd/conf-available/20-phabricator.conf \
-    /etc/nginx/sites-available/phabricator.conf
-  do
+    # get rid of configuration files and ucf entries
+    for config_file in \
+        /etc/apache2/conf-available/phabricator.conf \
+        /etc/lighttpd/conf-available/20-phabricator.conf \
+        /etc/nginx/sites-available/phabricator.conf
+do
     if which ucf >/dev/null 2>&1; then
-      ucf --purge $config_file
+        ucf --purge $config_file
     fi
     if [ -x "`which ucfr 2>/dev/null`" ]; then
-      ucfr --purge phabricator $config_file
+        ucfr --purge phabricator $config_file
     fi
     for ext in .ucf-new .ucf-old .ucf-dist ""; do
-      rm -f "$config_file$ext"
+        rm -f "$config_file$ext"
     done
-  done
+done
 
-  #TODO: remove /var/lib/phabricator/{repositories,phd_storage}?
-  #TODO: ask user whether or not to purge databases?
+#TODO: remove /var/lib/phabricator/{repositories,phd_storage}?
+#TODO: ask user whether or not to purge databases?
 fi
 
 #DEBHELPER# 
