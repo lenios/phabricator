@@ -12,7 +12,7 @@ Vcs-Git: git://github.com/lenios/phabricator.git
 Package: libphutil
 Architecture: all
 Depends: ${misc:Depends}
-Recommends: php5-cli
+Recommends: php-cli
 Description: Shared library for Arcanist and Phabricator
  libphutil (pronounced as "lib-futile", like the English word futile)
  is principally the shared library for Arcanist and Phabricator,
@@ -23,7 +23,7 @@ Description: Shared library for Arcanist and Phabricator
 
 Package: arcanist
 Architecture: all
-Depends: libphutil (= ${source:Version}), php5-cli, php5-curl, ${misc:Depends}
+Depends: libphutil (= ${source:Version}), php-cli, php-curl, ${misc:Depends}
 Conflicts: arc
 Suggests: python
 Description: Command line interface for Phabricator (review platform)
@@ -37,16 +37,16 @@ Depends: arcanist,
          dbconfig-common (>= 1.8.8),
          fonts-font-awesome,
          jq,
-         libapache2-mod-php5 | libapache2-mod-php5filter | php5-fpm | php5,
+         libapache2-mod-php | php-fpm | php,
          libjs-d3,
          libphutil (= ${source:Version}),
-         php5-cli,
-         php5-curl,
-         php5-mysql | php5-mysqli | php5-mysqlnd,
+         php-cli,
+         php-curl,
+         php-mysql | php-mysqli | php-mysqlnd,
          po-debconf,
          ucf,
          ${misc:Depends}
-Recommends: apache2 (>= 2.2.7) | lighttpd | nginx | httpd, php5-apcu, php5-gd, mariadb-server | mysql-server
+Recommends: apache2 (>= 2.2.7) | lighttpd | nginx | httpd, php-apcu, php-gd, mariadb-server | mysql-server
 Suggests: python, npm
 Description: Software engineering platform
  Phabricator is an open source collection of web applications which make it

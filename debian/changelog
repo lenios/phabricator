@@ -1,3 +1,10 @@
+phabricator (0~git20160521-1) unstable; urgency=medium
+
+  * New snapshot release
+  * transition to php7 (closes: #821472, #821543)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Sat, 21 May 2016 11:18:36 +0200
+
 phabricator (0~git20160326-1) unstable; urgency=medium
 
   * New snapshot release
