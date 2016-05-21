@@ -43,7 +43,7 @@ get-orig-source: $(info I: UDATE=$(UDATE))
 	    externals/wordlist \
 	    webroot/rsrc/externals/font/fontawesome \
 	    webroot/rsrc/externals/font/sourcesans \
-	    webroot/rsrc/externals/raphael
+	    webroot/rsrc/externals/d3
 	$(RM) -r arcanist-$(VER)/.git* libphutil-$(VER)/.git* phabricator-$(VER)/phabricator/.git*
 	@echo "# Packing..."
 	XZ_OPT="-6v" tar -caf phabricator_$(VER).orig.tar.xz phabricator-$(VER)

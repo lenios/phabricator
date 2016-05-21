@@ -1,5 +1,6 @@
 usr/share/fonts/eot/font-awesome/fontawesome-webfont.eot usr/share/phabricator/webroot/rsrc/externals/font/fontawesome/fontawesome-webfont.eot
 usr/share/fonts/truetype/font-awesome/fontawesome-webfont.ttf usr/share/phabricator/webroot/rsrc/externals/font/fontawesome/fontawesome-webfont.ttf 
 usr/share/fonts/woff/font-awesome/fontawesome-webfont.woff usr/share/phabricator/webroot/rsrc/externals/font/fontawesome/fontawesome-webfont.woff 
-usr/share/javascript/raphael/raphael.min.js usr/share/phabricator/webroot/rsrc/externals/raphael/raphael.js
 var/lib/phabricator/local.json usr/share/phabricator/conf/local/local.json
+usr/share/javascript/d3/d3.min.js usr/share/phabricator/webroot/rsrc/externals/d3/d3.min.js
+

@@ -1,3 +1,11 @@
+phabricator (0~git20160326-1) unstable; urgency=medium
+
+  * New snapshot release
+  * added Brazilian Portuguese translation (closes: #816951)
+  * replaced g.raphael with d3 3.5.14 (upstream change)
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Sat, 26 Mar 2016 10:07:35 +0100
+
 phabricator (0~git20160124-1) unstable; urgency=medium
 
   * New snapshot release
