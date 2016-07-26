@@ -10,6 +10,10 @@ Files: debian/*
 Copyright: 2014 Richard Sellam <richard.sellam@orvidia.fr>
 License: Apache-2.0
 
+Files: debian/po/da.po
+Copyright: 2016 Joe Hansen <joedalton2@yahoo.dk>
+License: Apache-2.0
+
 Files: debian/po/de.po
 Copyright: 2014-2015 Markus Hiereth <markus.hiereth@freenet.de>
 License: Apache-2.0

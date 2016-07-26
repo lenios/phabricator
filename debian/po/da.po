@@ -1,0 +1,146 @@
+# Danish translation phabricator.
+# Copyright (C) 2016 phabricator & nedenstående oversættere.
+# This file is distributed under the same license as the phabricator package.
+# Joe Hansen <joedalton2@yahoo.dk>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: phabricator\n"
+"Report-Msgid-Bugs-To: phabricator@packages.debian.org\n"
+"POT-Creation-Date: 2015-01-16 23:23+0100\n"
+"PO-Revision-Date: 2016-07-09 10:30+01:00\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:1001
+msgid "Domain name or subdomain name used by phabricator:"
+msgstr "Domænenavn eller underdomænenavn brugt af phabricator:"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:1001
+msgid ""
+"Phabricator must be installed on an entire domain. You can not install it to "
+"a path on an existing domain, like example.com/phabricator/. Instead, "
+"install it to an entire domain or subdomain, like phabricator.example.com."
+msgstr ""
+"Phabricator skal installeres på et helt domæne. Du kan ikke installere "
+"programmet i en sti på et eksisterende domæne, såsom eksempel.dk/phabricator/. "
+"I stedet installeres det på et helt domæne eller underdomæne, såsom "
+"phabricator.eksempel.dk."
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+msgid "hostname or IP address of the MySQL server:"
+msgstr "værtsnavn eller IP-adresse for MySQL-serveren:"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:2001
+msgid ""
+"Phabricator is usually installed with the MySQL database on the same host "
+"(referred as localhost), but some advanced users might want to put the "
+"database on a different host."
+msgstr ""
+"Phabricator installeres normalt med MySQL-databasen på den samme vært "
+"(refereret som localhost), men nogle avancerede brugere kan ønske  "
+"at placere databasen på en anden vært."
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+msgid "MySQL administrator account username:"
+msgstr "Kontobrugernavn for MySQL-administratoren:"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+msgid ""
+"Please enter the username of a MySQL account that has enough privileges to "
+"create and use phabricator_* databases."
+msgstr ""
+"Indtast brugernavnet for en MySQL-konto som har nok privilegier til "
+"at oprette og bruge phabricator_*-databaser."
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+msgid "You can create such a user with the following MySQL command:"
+msgstr "Du kan oprette en sådan bruger med den følgende MySQL-kommando:"
+
+#. Type: string
+#. Description
+#: ../phabricator.templates:3001
+#, no-c-format
+msgid ""
+"grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
+"identified by 'PASSWORD';"
+msgstr ""
+"grant all privileges on `phabricator\\_%`.* to 'phabricator'@localhost "
+"identified by 'PASSWORD';"
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:4001
+msgid "MySQL administrator account password:"
+msgstr "Kontoadgangskode for MySQL-administratoren:"
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:5001
+msgid "MySQL administrator account password confirmation:"
+msgstr "Bekræftelse på kontoadgangskoden for MySQL-administratoren:"
+
+#. Type: password
+#. Description
+#: ../phabricator.templates:5001
+msgid ""
+"Please enter the MySQL administrator account password again for confirmation."
+msgstr ""
+"Indtast MySQL-administratorens kontoadgangskode igen for bekræftelse."
+
+#. Type: error
+#. Description
+#: ../phabricator.templates:6001
+msgid "Password input error"
+msgstr "Indtastningsfejl for adgangskoden"
+
+#. Type: error
+#. Description
+#: ../phabricator.templates:6001
+msgid "The two passwords you entered were not the same. Please try again."
+msgstr "De to adgangskoder du indtastede var ikke ens. Prøv igen."
+
+#. Type: select
+#. Choices
+#: ../phabricator.templates:7001
+msgid "None"
+msgstr "Ingen"
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:7002
+msgid "Web server:"
+msgstr "Internetserver:"
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:7002
+msgid ""
+"Please select the web server to configure automatically for Phabricator."
+msgstr ""
+"Vælg venligst internetserveren der automatisk skal konfigureres for Phabricator."
+
+#. Type: select
+#. Description
+#: ../phabricator.templates:7002
+msgid "Select \"None\" if you would like to configure the web server manually."
+msgstr "Vælg »Ingen« hvis du ønsker manuelt at konfigurere internetserveren."
+

@@ -1,6 +1,7 @@
 phabricator (0~git20160726-1) unstable; urgency=medium
 
   * New snapshot release
+  * Added Danish translation (closes: #830654)
 
  -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 26 Jul 2016 23:09:55 +0200
 
