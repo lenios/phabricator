@@ -1,5 +1,7 @@
 #not a script, only a shebang
 arcanist: script-not-executable */__tests__/xhpast/php-tags-script.lint-test
 arcanist: script-not-executable */__tests__/chmod/shebang.lint-test
+arcanist: script-not-executable */__tests__/inline-html/inline-html.lint-test
+arcanist: script-not-executable */__tests__/php-open-tag/php-tags-script.lint-test
 
 
