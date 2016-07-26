@@ -1,3 +1,9 @@
+phabricator (0~git20160726-1) unstable; urgency=medium
+
+  * New snapshot release
+
+ -- Richard Sellam <richard.sellam@orvidia.fr>  Tue, 26 Jul 2016 23:09:55 +0200
+
 phabricator (0~git20160521-1) unstable; urgency=medium
 
   * New snapshot release
