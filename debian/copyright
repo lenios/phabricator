@@ -70,6 +70,10 @@ Files: phabricator/externals/mimemailparser/*
 Copyright: gabe@fijiwebdesign.com
 License: Artistic
 
+Files: phabricator/externals/octicons/*
+Copyright: 2012-2016 GitHub, Inc.
+License: Expat
+
 Files: phabricator/externals/pear-figlet/*
 Copyright: Evgeny Stepanischev <imbolk@gmail.com>
            Christian Weiske <cweiske@php.net>
@@ -89,10 +93,6 @@ Copyright: 2010, Dominik Dzienia <deltalab@poczta.fm>
            2006-2010, Kentaro Fukuchi <fukuchi@megaui.net>
            2002-2006, Phil Karn
 License: LGPL-3+
-
-Files: phabricator/externals/recaptcha/*
-Copyright: 2007 reCAPTCHA
-License: Expat
 
 Files: phabricator/externals/restful/*
 Copyright: 2012 Noone
@@ -149,10 +149,6 @@ Comment:
  They are available in the public domain:
  _.
  http://tango.freedesktop.org/Frequently_Asked_Questions
-
-Files: phabricator/webroot/rsrc/externals/font/aleo/*
-Copyright: 2013 Google
-License: Apache-2.0
 
 Files: phabricator/webroot/rsrc/externals/font/lato/*
 Copyright: 2010-2014 tyPoland Lukasz Dziedzic <team@latofonts.com>
